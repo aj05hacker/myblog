@@ -40,7 +40,7 @@
             <!-- Blog Cards -->
             <div class="blog-card">
                 <div class="blog-title">Blog Title 1</div>
-                <div class="blog-image" style="background-image: url('blog.jpg');"></div>
+                <div class="blog-image" style="background-image: url('images/blog.jpg');"></div>
                 <div class="blog-content">
                     <p>Magnesium is one of the six essential macro-minerals that...</p>
                 </div>
@@ -51,7 +51,7 @@
 
             <div class="blog-card">
                 <div class="blog-title">Blog Title 1</div>
-                <div class="blog-image" style="background-image: url('blog.jpg');"></div>
+                <div class="blog-image" style="background-image: url('images/blog.jpg');"></div>
                 <div class="blog-content">
                     <p>Magnesium is one of the six essential macro-minerals that...</p>
                 </div>
@@ -62,7 +62,7 @@
 
             <div class="blog-card">
                 <div class="blog-title">Blog Title 1</div>
-                <div class="blog-image" style="background-image: url('blog.jpg');"></div>
+                <div class="blog-image" style="background-image: url('images/blog.jpg');"></div>
                 <div class="blog-content">
                     <p>Magnesium is one of the six essential macro-minerals that...</p>
                 </div>
@@ -73,7 +73,7 @@
 
             <div class="blog-card">
                 <div class="blog-title">Blog Title 1</div>
-                <div class="blog-image" style="background-image: url('blog.jpg');"></div>
+                <div class="blog-image" style="background-image: url('images/blog.jpg');"></div>
                 <div class="blog-content">
                     <p>Magnesium is one of the six essential macro-minerals that...</p>
                 </div>
@@ -84,7 +84,7 @@
 
             <div class="blog-card">
                 <div class="blog-title">Blog Title 1</div>
-                <div class="blog-image" style="background-image: url('blog.jpg');"></div>
+                <div class="blog-image" style="background-image: url('images/blog.jpg');"></div>
                 <div class="blog-content">
                     <p>Magnesium is one of the six essential macro-minerals that...</p>
                 </div>
@@ -95,7 +95,7 @@
 
             <div class="blog-card">
                 <div class="blog-title">Blog Title 1</div>
-                <div class="blog-image" style="background-image: url('blog.jpg');"></div>
+                <div class="blog-image" style="background-image: url('images/blog.jpg');"></div>
                 <div class="blog-content">
                     <p>Magnesium is one of the six essential macro-minerals that...</p>
                 </div>
@@ -106,7 +106,7 @@
 
             <div class="blog-card">
                 <div class="blog-title">Blog Title 1</div>
-                <div class="blog-image" style="background-image: url('blog.jpg');"></div>
+                <div class="blog-image" style="background-image: url('images/blog.jpg');"></div>
                 <div class="blog-content">
                     <p>Magnesium is one of the six essential macro-minerals that...</p>
                 </div>
