@@ -7,18 +7,52 @@ body {
     color: #fff; /* Default text color */
 }
 
+
+
+
 /* Navbar */
 .navbar {
     position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #7e560075;
+    top: 20px; /* Adjust the distance from the top of the screen */
+    left: 50%;
+    transform: translateX(-50%); /* Center the navbar horizontally */
+    width: 95%; /* Adjust the width to make the navbar longer */
+    max-width: 1200px; /* Set a maximum width to prevent it from being too large on wide screens */
+    background-color: #ffffffb9;
     padding: 15px;
     display: flex;
     justify-content: space-between; /* Space between logo and hamburger menu */
     align-items: center;
     z-index: 1000;
+    border-radius: 10px; /* Add some rounding for a floating effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for a floating effect */
 }
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .navbar {
+        width: 90%; /* Adjust width for smaller screens */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+
+/* Navbar ----------------------------------------------------------------------
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ffffff96;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between; /* Space between logo and hamburger menu 
+    align-items: center;
+    z-index: 1000;
+} 
+------------------------------------------------------------------------------*/
+
+
 
 .logo {
     height: 40px; /* Adjust the height to fit your design */
@@ -87,7 +121,7 @@ body {
 /* Front Page Section */
 .front-page {
     height: 100vh;
-    background: url('images/background-3.svg') no-repeat center center/cover;
+    background: url('images/background.svg') no-repeat center center/cover;
     display: flex;
     align-items: flex-start; /* Align items to the start (left) */
     justify-content: flex-start;
@@ -99,7 +133,7 @@ body {
 
 .front-page h1 {
     font-size: 58px;
-    padding-top: 35px;
+    padding-top: 50px;
     margin-bottom: 0px;
     font-style: oblique;
     text-decoration: underline;
