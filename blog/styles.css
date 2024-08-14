@@ -433,3 +433,22 @@ body {
       bottom: var(--distance, 10rem);
     }
   }
+
+
+
+  html, body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box; /* Prevent elements from exceeding their container */
+}
+
+/* Ensure all sections and containers are within viewport limits */
+.container, .section {
+    max-width: 100%;
+    overflow-x: hidden;
+}
