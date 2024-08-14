@@ -198,7 +198,7 @@ body {
 .blog-card:hover {
     transform: scale(1.08);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-    background-color: #ff3964; /* Brighter grayscale background on hover */
+    background-color: #fa5e20; /* Brighter grayscale background on hover */
     color: black;
 }
 
@@ -333,7 +333,7 @@ body {
 
   body .footer {
     z-index: 1;
-    --footer-background:#ED5565;
+    --footer-background:#ff3c00;
     display: grid;
     position: relative;
     grid-area: footer;
