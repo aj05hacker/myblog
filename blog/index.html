@@ -35,7 +35,7 @@
     </section>
 
     <!-- Blogs Section -->
-    <section class="blogs-section">
+    <section id="blogs-section">
         <div class="container">
             <!-- Blog Cards -->
             <div class="blog-card">
@@ -139,5 +139,13 @@
     </section>
 
     <script src="script.js"></script>
+
+        <script>
+        document.querySelector('.read-blogs-btn').addEventListener('click', function() {
+            document.getElementById('blogs-section').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>
