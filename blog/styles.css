@@ -368,6 +368,7 @@ body {
   body .footer .content a, body .footer .content p {
     color: #F5F7FA;
     text-decoration: none;
+    text-align: justify;
   }
   body .footer .content b {
     color: white;
