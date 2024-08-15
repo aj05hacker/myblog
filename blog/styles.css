@@ -277,6 +277,25 @@ body {
     width: 80%;
 }
 
+
+.cmt-btn{
+  position: static;
+  bottom: 15px; /* Adjust as needed for spacing */
+  left: 15px; /* Adjust as needed for spacing */
+  background-color: #ff4800;
+  border: none;
+  border-radius: 20px; /* Rounded corners */
+  padding: 8px 15px; /* Small size */
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-left: 10%;
+  width: 80%;
+
+}
+
 .blog-btn a {
     text-decoration: none;
     color: white;
