@@ -207,7 +207,7 @@ body {
     padding: 15px;
     font-size: 20px;
     font-weight: bold;
-    color: rgb(0, 0, 0); /* Ensure the title text stands out */
+    color: rgb(255, 255, 255); /* Ensure the title text stands out */
     text-align: left;
     background-color: transparent; /* Set the background to transparent */
 }
