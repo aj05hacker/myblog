@@ -180,7 +180,7 @@ body {
 
 /* Blog Card */
 .blog-card {
-    background: #000000; /* Grayscale background for normal state */
+    background: #ff711e; /* Grayscale background for normal state */
     color: white; /* Light text color */
     padding: 0;
     margin: 20px 0;
