@@ -352,6 +352,12 @@ body {
         margin-top: 10px;
     }
 
+    .cmt-blogs-btn {
+      font-size: 16px;
+      padding: 10px 20px;
+      margin-top: 10px;
+  }
+
     .quote-button-container {
         flex-direction: column; /* Stack quote and button vertically */
     }
