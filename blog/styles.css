@@ -165,7 +165,7 @@ body {
 }
 
 
-.cmt-blogs-btn {
+/*.cmt-blogs-btn {
   padding: 15px 30px;
   background-color: #ff6347;
   border: none;
@@ -176,7 +176,7 @@ body {
 
 .cmt-blogs-btn:hover {
   background-color: #ff4500;
-}
+}*/
 
 /* Blogs Section */
 .blogs-section {
@@ -352,11 +352,11 @@ body {
         margin-top: 10px;
     }
 
-    .cmt-blogs-btn {
+    /*.cmt-blogs-btn {
       font-size: 16px;
       padding: 10px 20px;
       margin-top: 10px;
-  }
+  }*/
 
     .quote-button-container {
         flex-direction: column; /* Stack quote and button vertically */
