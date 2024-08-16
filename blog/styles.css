@@ -20,7 +20,7 @@ body {
     transform: translateX(-50%); /* Center the navbar horizontally */
     width: 95%; /* Adjust the width to make the navbar longer */
     max-width: 1200px; /* Set a maximum width to prevent it from being too large on wide screens */
-    background-color: #585858b9;
+    background-color: #ffffffb9;
     padding: 15px;
     display: flex;
     justify-content: space-between; /* Space between logo and hamburger menu */
@@ -71,7 +71,7 @@ body {
 .hamburger-menu span {
     height: 3px;
     width: 25px;
-    background-color: rgba(83, 83, 83, 0.651);
+    background-color: white;
     margin: 4px 0;
     transition: 0.4s;
 }
@@ -261,7 +261,7 @@ body {
     overflow: hidden; /* Hide overflow text */
     text-overflow: ellipsis; /* Add ellipsis to indicate more text */
     display: -webkit-box;
-    /*-webkit-line-clamp: 2; Limit to 2 lines
+    /*-webkit-line-clamp: 2; /* Limit to 2 lines 
     -webkit-box-orient: vertical;*/
     transition: background-color 0.4s ease-in-out; /* Smooth transition for background color change */
     margin-bottom: 40px; /* Increased margin to create space for the button */
