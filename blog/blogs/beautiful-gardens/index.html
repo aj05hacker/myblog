@@ -56,13 +56,15 @@
                 <h2>2. Butchart Gardens, Canada</h2>
                 <p><b>Nature’s Artistry in Full Bloom</b></p>
                 <div class="content">
-                    <img src="./images/Butchart Gardens.jpeg" alt="Butchart Gardens">
+                    <img src="./images/Butchart Gardens.jpeg" alt="Butchart Gardens">                    
                     <div class="text">
                         <p>Butchart Gardens, located on Vancouver Island in Canada, is a world-renowned horticultural masterpiece. Spanning over 55 acres, these gardens offer a mesmerizing display of floral artistry, with each area meticulously designed to showcase the beauty of nature. Originally a barren limestone quarry, it was transformed by Jennie Butchart in 1904 into a stunning Sunken Garden, laying the foundation for what would become one of the most celebrated gardens globally.</p>
                         <p>As visitors explore, they encounter various themed gardens, including the serene Japanese Garden, the vibrant Rose Garden, and the Mediterranean Garden, each offering a unique sensory experience. The gardens change with the seasons, offering different spectacles of color and fragrance throughout the year, making each visit a new adventure. Spring and summer are particularly captivating, with tulips, roses, and other blooms creating a vibrant palette of colors.</p>
                         <p>The garden is not just a place of botanical beauty but also a cultural hub, hosting evening concerts, fireworks displays, and festive events during the holiday season. Butchart Gardens has earned its reputation as a top tourist destination, attracting over a million visitors annually who come to marvel at its natural beauty and human artistry.</p>
                         <p>Whether strolling through the lush pathways, enjoying a quiet moment by the fountains, or participating in one of the many events, Butchart Gardens offers an unforgettable experience. Its blend of natural splendor and creative design ensures that it remains a cherished destination for both garden enthusiasts and those seeking tranquility in a stunning setting.</p>
                     </div>
+                    
+
                 </div>
             </section>
     
@@ -89,6 +91,13 @@
                     <img src="./images/image4.svg" alt="Gallery Image 4">
                     <img src="./images/image5.svg" alt="Gallery Image 5">
                     <!--img src="./images/blog5.jpg" alt="Gallery Image 6"-->
+
+                    <div id="imageModal" class="modal">
+                        <span class="close">&times;</span>
+                        <img class="modal-content" id="modalImg">
+                        <a id="downloadBtn" href="#" download><button>Download</button></a>
+                    </div>
+                    
                 </div>
             </section>
             <button class="read-more-btn" onclick="window.location.href='https://blogs.abdulhajees.in'" style="align-items: center;">Read Other Blogs</button>
@@ -135,6 +144,35 @@
                 nav.classList.toggle('active');
             });
         });
+
+
+        // Get the modal elements
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImg");
+            const downloadBtn = document.getElementById("downloadBtn");
+            const closeBtn = document.getElementsByClassName("close")[0];
+
+        // Add event listeners to gallery images
+                document.querySelectorAll(".gallery-grid img").forEach(img => {
+                img.addEventListener("click", function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                downloadBtn.href = this.src;
+            });
+        });
+
+        // Close the modal
+            closeBtn.onclick = function() { 
+            modal.style.display = "none";
+        }
+
+        // Close the modal when clicking outside the image
+            modal.onclick = function(event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            }
+
     </script>
 </body>
 </html>
