@@ -153,9 +153,9 @@ body {
 
 .read-blogs-btn {
     padding: 15px 30px;
-    background-color: #ff6347;
+    background-color: #ff9971;
     border: none;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 18px;
     cursor: pointer;
 }
