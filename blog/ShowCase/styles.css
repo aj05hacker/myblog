@@ -239,7 +239,7 @@ body {
 
 .blog-date {
     font-size: 14px;
-    color: #005851; /* Light gray color */
+    color: #a6fff8; /* Light gray color */
     padding: 10px 20px;
     text-align: left;
     font-style: italic;
@@ -279,11 +279,11 @@ body {
     position: static;
     bottom: 15px; /* Adjust as needed for spacing */
     left: 15px; /* Adjust as needed for spacing */
-    background-color: #ff4800;
+    background-color: #ff7741;
     border: none;
     border-radius: 20px; /* Rounded corners */
     padding: 8px 15px; /* Small size */
-    color: white;
+    color: rgb(0, 0, 0);
     font-weight: bold;
     cursor: pointer;
     text-align: center;
