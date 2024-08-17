@@ -283,7 +283,7 @@ body {
     border: none;
     border-radius: 20px; /* Rounded corners */
     padding: 8px 15px; /* Small size */
-    color: rgb(0, 0, 0);
+    color: rgb(2, 2, 2);
     font-weight: bold;
     cursor: pointer;
     text-align: center;
