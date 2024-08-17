@@ -158,6 +158,7 @@ body {
     color: rgb(0, 0, 0);
     font-size: 18px;
     cursor: pointer;
+    border: solid 3px orangered;
 }
 
 .read-blogs-btn:hover {
