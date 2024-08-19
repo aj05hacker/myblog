@@ -18,7 +18,7 @@
             align-items: center;
             font-family: 'Arial', sans-serif;
             background: linear-gradient(135deg, #f5a623, #f76b1c, #eb3349);
-            color: #fff;
+            color: #ffffff;
             animation: backgroundAnimation 10s infinite alternate;
             overflow: hidden;
             text-align: center;
@@ -113,6 +113,25 @@
         .contact-info a:hover {
             border-bottom: 2px solid #fff;
         }
+
+        h1 {
+    font-size: 3em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    background: linear-gradient(90deg, #f5a623, #f76b1c, #eb3349, #4a90e2, #50e3c2, #f5a623);
+    background-size: 300%;
+    background-clip: text; /* Standard property */
+    -webkit-background-clip: text; /* Webkit-specific property */
+    color: transparent;
+    animation: colorShift 5s linear infinite;
+}
+
+@keyframes colorShift {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
     </style>
 </head>
 <body>
@@ -124,7 +143,7 @@
         <div class="countdown" id="countdown"></div>
         <div class="loader"></div>
         <div class="contact-info">
-            <p>Developed by <a href="https://abdulhajees.in" target="_blank">Abdul Hajees</a></p>
+            <p>Author & Developed by <a href="https://abdulhajees.in" target="_blank">Abdul Hajees</a></p>
             <p>Visit our main site: <a href="https://blogs.abdulhajees.in" target="_blank">blogs.abdulhajees.in</a></p>
         </div>
     </div>
