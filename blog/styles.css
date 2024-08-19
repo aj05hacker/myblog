@@ -509,3 +509,31 @@ body {
   max-height: 3rem;
   line-height: 1.5rem;
 }
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.read-blogs-btn {
+  /* Your existing button styles */
+  /* Example: */
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  /* Additional styles can be added here */
+}
+
