@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TQRJTHNWF"></script>
     <script>
@@ -12,11 +11,30 @@
     gtag('config', 'G-2TQRJTHNWF');
     </script>
 
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Most Mysterious Black Holes in the Universe</title>
-    <!--link rel="stylesheet" href="styles.css"-->
+    <title>The Most Mysterious Black Holes in the Universe | Time and Thought</title>
+    <meta name="description" content="Explore the enigmatic giants that defy the laws of physics. Learn about supermassive, stellar, and primordial black holes, and their role in shaping the universe.">
+    <meta name="keywords" content="black holes, supermassive black holes, stellar black holes, primordial black holes, space, universe, time and thought, abdul hajees">
+    <meta name="author" content="Abdul Hajees">
+    <meta name="robots" content="index, follow">
+    <meta name="google-site-verification" content="your-verification-code-here">
+
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="The Most Mysterious Black Holes in the Universe | Time and Thought">
+    <meta property="og:description" content="Explore the enigmatic giants that defy the laws of physics. Learn about supermassive, stellar, and primordial black holes, and their role in shaping the universe.">
+    <meta property="og:image" content="https://blogs.abdulhajees.in/images/blackhole-bg.jpg">
+    <meta property="og:url" content="https://blogs.abdulhajees.in">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Time and Thought">
+
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@your-twitter-handle">
+    <meta name="twitter:title" content="The Most Mysterious Black Holes in the Universe | Time and Thought">
+    <meta name="twitter:description" content="Explore the enigmatic giants that defy the laws of physics. Learn about supermassive, stellar, and primordial black holes, and their role in shaping the universe.">
+    <meta name="twitter:image" content="https://blogs.abdulhajees.in/images/blackhole-bg.jpg">
+
     <link rel="stylesheet" href="https://library.css.abdulhajees.in/compressed.css">
     <script src="script.js"></script>
     <style>
@@ -41,7 +59,7 @@
     </div>
 
     <nav>
-        <img src="./images/T&T-1.svg" alt="Logo">
+        <img src="./images/T&T-1.svg" alt="Time and Thought Logo">
         <span class="menu-btn">&#9776;</span>
         <ul>
             <li><a href="#supermassive">Supermassive Black Holes</a></li>
@@ -55,7 +73,8 @@
         <h1>The Most Mysterious Black Holes in the Universe</h1>
         <p style="color: rgb(255, 255, 255);">The enigmatic giants that defy the laws of physics.</p>
         <div class="meta-info">
-            <span>Published on: August 12, 2024</span><br>
+            <span>Published on: August 12, 2024</span>
+            <br>
             <span><a href="https://abdulhajees.in" style="text-decoration: none;color: white;">Author: <span style="color:gold;">S Abdul Hajees</span></a></span>
         </div>
     </header>
@@ -142,7 +161,7 @@
     
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+          document.addEventListener("DOMContentLoaded", function() {
             const preloader = document.getElementById('preloader');
             setTimeout(function() {
                 preloader.style.opacity = '0';
@@ -175,33 +194,32 @@
         });
 
 
-
         // Get the modal elements
-const modal = document.getElementById("imageModal");
-const modalImg = document.getElementById("modalImg");
-const downloadBtn = document.getElementById("downloadBtn");
-const closeBtn = document.getElementsByClassName("close")[0];
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImg");
+            const downloadBtn = document.getElementById("downloadBtn");
+            const closeBtn = document.getElementsByClassName("close")[0];
 
-// Add event listeners to gallery images
-document.querySelectorAll(".gallery-grid img").forEach(img => {
-    img.addEventListener("click", function() {
-        modal.style.display = "block";
-        modalImg.src = this.src;
-        downloadBtn.href = this.src;
-    });
-});
+        // Add event listeners to gallery images
+                document.querySelectorAll(".gallery-grid img").forEach(img => {
+                img.addEventListener("click", function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                downloadBtn.href = this.src;
+            });
+        });
 
-// Close the modal
-closeBtn.onclick = function() { 
-    modal.style.display = "none";
-}
+        // Close the modal
+            closeBtn.onclick = function() { 
+            modal.style.display = "none";
+        }
 
-// Close the modal when clicking outside the image
-modal.onclick = function(event) {
-    if (event.target === modal) {
-        modal.style.display = "none";
-    }
-}
+        // Close the modal when clicking outside the image
+            modal.onclick = function(event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            }
 
     </script>
 </body>
