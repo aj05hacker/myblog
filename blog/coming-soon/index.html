@@ -3,173 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Time and Thought - A showcase of diverse and insightful blogs. New blogs coming soon.">
-    <meta name="keywords" content="Time and Thought, Blogs, Coming Soon, Abdul Hajees, Blog Showcase">
-    <meta name="author" content="Abdul Hajees">
-    <title>Coming Soon - Time and Thought</title>
+    <title>Blog Showcase - Abdul Hajees</title>
+    <meta name="description" content="Explore a collection of insightful blogs on various topics, including nutrition, emotions, nature, and human senses.">
+    <meta name="keywords" content="abdul hajees, blogs, blogger, showcase, nutrition, emotions, nature, human senses">
+    <meta name="author" content="Abdulhajees S">
+    <meta name="copyright" content="2024 Time and Thought. All Rights Reserved.">
+
+    <link rel="stylesheet" href="https://library.css.abdulhajees.in/compressed.css">
     <style>
-        body, html {
+        body {
+            background-color: #1a1a1a;
+            color: #f1f1f1;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #f5a623, #f76b1c, #eb3349);
-            color: #ffffff;
-            animation: backgroundAnimation 10s infinite alternate;
-            overflow: hidden;
-            text-align: center;
+            line-height: 1.6;
         }
 
-        @keyframes backgroundAnimation {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 100% 50%; }
-        }
-
-        .container {
+        header {
             text-align: center;
-            padding: 20px;
-            max-width: 500px;
+            padding: 50px;
+            background: linear-gradient(to right, #ff5722, #ff9800);
+            color: white;
+            border-bottom: 2px solid #ff9800;
         }
 
         h1 {
-            font-size: 3em;
+            font-size: 2.5rem;
             margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            animation: fadeIn 2s ease-in-out;
-            white-space: nowrap;
         }
 
         p {
-            font-size: 1.2em;
+            font-size: 1.1rem;
             margin-bottom: 20px;
-            animation: fadeIn 3s ease-in-out;
         }
 
-        .quote {
-            font-style: italic;
-            font-size: 1.2em;
-            margin-bottom: 30px;
-            animation: fadeIn 4s ease-in-out;
+        .blog-card {
+            background-color: #2b2b2b;
+            border-radius: 8px;
+            margin: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.2s, box-shadow 0.2s;
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
         }
 
-        .coming-soon {
-            font-size: 1.5em;
-            margin-bottom: 20px;
-            font-weight: bold;
-            animation: pulse 2s infinite;
+        .blog-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
         }
 
-        .countdown {
-            font-size: 2em;
-            margin-bottom: 40px;
-            animation: fadeIn 5s ease-in-out;
+        .blog-title {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #ff9800;
         }
 
-        .loader {
-            border: 5px solid #f3f3f3;
-            border-radius: 50%;
-            border-top: 5px solid #eb3349;
-            border-right: 5px solid #f5a623;
-            border-bottom: 5px solid #f76b1c;
-            width: 50px;
-            height: 50px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        .contact-info {
-            margin-top: 30px;
-            font-size: 1em;
-        }
-
-        .contact-info a {
-            color: #fff;
+        .read-more-btn {
+            background-color: #ff5722;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
             text-decoration: none;
-            border-bottom: 2px solid transparent;
-            transition: border-bottom 0.3s ease;
+            display: inline-block;
+            transition: background-color 0.3s;
         }
 
-        .contact-info a:hover {
-            border-bottom: 2px solid #fff;
+        .read-more-btn:hover {
+            background-color: #ff9800;
         }
 
-        h1 {
-    font-size: 3em;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    white-space: nowrap;
-    background: linear-gradient(90deg, #f5a623, #f76b1c, #eb3349, #4a90e2, #50e3c2, #f5a623);
-    background-size: 300%;
-    background-clip: text; /* Standard property */
-    -webkit-background-clip: text; /* Webkit-specific property */
-    color: transparent;
-    animation: colorShift 5s linear infinite;
-}
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
 
-@keyframes colorShift {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 100% 50%; }
-}
-
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Time and Thought </h1>
-        <!--p>Explore diverse and insightful blogs.</p-->
-        <div class="quote">As time flows, our thoughts define the currents.</div>
-        <div class="coming-soon">New Blogs Coming Soon...</div>
-        <div class="countdown" id="countdown"></div>
-        <div class="loader"></div>
-        <div class="contact-info">
-            <p>Author & Developed by <a href="https://abdulhajees.in" target="_blank">Abdul Hajees</a></p>
-            <p>Visit our main site: <a href="https://blogs.abdulhajees.in" target="_blank">blogs.abdulhajees.in</a></p>
-        </div>
-    </div>
-
-    <script>
-        // Countdown Timer
-        const countdownElement = document.getElementById('countdown');
-        const targetDate = new Date('2024-08-24T00:00:00').getTime();
-
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const distance = targetDate - now;
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-
-            if (distance < 0) {
-                countdownElement.innerHTML = "We're Live!";
+        @media (max-width: 600px) {
+            header {
+                padding: 30px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            p {
+                font-size: 1rem;
             }
         }
 
-        setInterval(updateCountdown, 1000);
-    </script>
+        @media (min-width: 601px) and (max-width: 900px) {
+            .blog-card {
+                width: 45%;
+            }
+        }
+
+        @media (min-width: 901px) {
+            .blog-card {
+                width: 30%;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1a1a1a;
+            border-top: 2px solid #ff9800;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Blog Showcase</h1>
+        <p>Explore a collection of insightful blogs on various topics.</p>
+    </header>
+
+    <div class="container">
+        <div class="blog-card">
+            <h2 class="blog-title">Nutrition Myths: Debunking Common Misconceptions</h2>
+            <a href="https://blogs.abdulhajees.in/blogs/Nutrition-myths/index.html" class="read-more-btn">Read More</a>
+        </div>
+
+        <div class="blog-card">
+            <h2 class="blog-title">The Marvels of the Natural World</h2>
+            <a href="https://blogs.abdulhajees.in/blogs/ecosystem/index.html" class="read-more-btn">Read More</a>
+        </div>
+
+        <div class="blog-card">
+            <h2 class="blog-title">The Science of Emotions: Understanding Our Feelings</h2>
+            <a href="https://blogs.abdulhajees.in/blogs/human-emotions/index.html" class="read-more-btn">Read More</a>
+        </div>
+
+        <div class="blog-card">
+            <h2 class="blog-title">The Marvelous Mechanisms of Human Senses</h2>
+            <a href="https://blogs.abdulhajees.in/blogs/human-sense/index.html" class="read-more-btn">Read More</a>
+        </div>
+
+        <div class="blog-card">
+            <h2 class="blog-title">Nutrition Myths: Debunking Common Misconceptions</h2>
+            <a href="https://blogs.abdulhajees.in/blogs/Nutrition-myths/index.html" class="read-more-btn">Read More</a>
+        </div>
+
+
+        <div class="blog-card">
+            <h2 class="blog-title">More blogs will be added.</h2>
+            <a href="https://blogs.abdulhajees.in" class="read-more-btn">Read More</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Abdul Hajees. All rights reserved.</p>
+    </footer>
 </body>
 </html>
