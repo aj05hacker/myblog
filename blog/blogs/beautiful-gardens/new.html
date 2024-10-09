@@ -103,5 +103,68 @@
             </section>
         </main>
     </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const preloader = document.getElementById('preloader');
+            setTimeout(function() {
+                preloader.style.opacity = '0';
+                preloader.style.zIndex = '-1';
+            }, 1000);
+
+            const sections = document.querySelectorAll('section');
+            const options = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fadeIn');
+                    }
+                });
+            }, options);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            const menuBtn = document.querySelector('.menu-btn');
+            const nav = document.querySelector('nav');
+
+            menuBtn.addEventListener('click', function() {
+                nav.classList.toggle('active');
+            });
+        });
+
+
+        // Get the modal elements
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImg");
+            const downloadBtn = document.getElementById("downloadBtn");
+            const closeBtn = document.getElementsByClassName("close")[0];
+
+        // Add event listeners to gallery images
+                document.querySelectorAll(".gallery-grid img").forEach(img => {
+                img.addEventListener("click", function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                downloadBtn.href = this.src;
+            });
+        });
+
+        // Close the modal
+            closeBtn.onclick = function() { 
+            modal.style.display = "none";
+        }
+
+        // Close the modal when clicking outside the image
+            modal.onclick = function(event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            }
+
+    </script>
 </body>
 </html>
