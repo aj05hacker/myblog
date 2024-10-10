@@ -202,6 +202,7 @@ body {
   transition: filter 0.4s ease-in-out; /* Smooth transition for filter */
 }
 
+/* Blog Date */
 .blog-date {
   font-size: 14px;
   color: #a6fff8; /* Light gray color */
@@ -211,6 +212,7 @@ body {
   background-color: transparent; /* Ensure the background is transparent */
 }
 
+/* Blog Author */
 .blog-author {
   font-size: 14px;
   color: #a6fff8; /* Light gray color */
@@ -219,12 +221,13 @@ body {
   font-style: italic;
 }
 
+/* Blog Content */
 .blog-content {
   text-align: justify;
   padding-left: 20px;
   padding-right: 20px;
   flex-grow: 1;
-  max-height: none; /* Remove max-height to allow full description */
+  max-height: none; /* Allow full height */
   overflow: hidden; /* Hide overflow text */
   text-overflow: ellipsis; /* Add ellipsis to indicate more text */
   display: -webkit-box;
@@ -333,4 +336,9 @@ body {
       padding-left: 10%;
       padding-right: 10%;
   }
+}
+
+/* Blog Card Hover Effect on Image */
+.blog-card:hover .blog-image {
+  filter: grayscale(100%); /* Apply grayscale filter on hover */
 }

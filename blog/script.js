@@ -7,6 +7,10 @@ document.querySelector('.hamburger-menu').addEventListener('click', function () 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
 import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js";
 
+// Import necessary Firebase modules
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js";
+
 // Firebase Configuration
 const firebaseConfig = {
     apiKey: "AIzaSyAYfSOYiMe8y4BF2Tj7e1kKgBMi6tzuiQ0",
@@ -33,6 +37,7 @@ const authorsSet = new Set();
 function createBlogCard(blog) {
     const blogCard = document.createElement('div');
     blogCard.className = 'blog-card';
+    // Inline styles are handled via CSS classes
 
     blogCard.innerHTML = `
         <a href="${blog.link}" class="blog-card-link" aria-label="Read more about ${blog.title}"></a>
