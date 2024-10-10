@@ -186,12 +186,12 @@ body {
 /* Blog Title */
 .blog-title {
   padding: 15px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   color: rgb(255, 255, 255); /* Ensure the title text stands out */
   text-align: left;
   background-color: transparent; /* Set the background to transparent */
-  text-align: justify;
+  text-align: left
 }
 
 /* Blog Image */
