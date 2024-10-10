@@ -69,55 +69,157 @@
     </script>
 </head>
 
+
 <body>
     <!-- Fixed Navbar -->
-    <nav class="navbar">
-        <img src="images/logo - abdulhajees.svg" class="logo" alt="Your Logo">
-        <div class="hamburger-menu">
-            <span></span>
-            <span></span>
-            <span></span>
+    <nav class="navbar" style="
+        background-color: #4CAF50; 
+        padding: 1.5em 0; 
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+        position: sticky; 
+        top: 0; 
+        z-index: 1000;
+    ">
+        <img src="images/logo - abdulhajees.svg" class="logo" alt="Your Logo" style="height: 50px; margin-left: 20px;">
+        <div class="hamburger-menu" style="
+            display: none; 
+            flex-direction: column; 
+            cursor: pointer; 
+            position: absolute; 
+            right: 20px;
+        ">
+            <span style="height: 3px; width: 25px; background-color: #fff; margin-bottom: 4px;"></span>
+            <span style="height: 3px; width: 25px; background-color: #fff; margin-bottom: 4px;"></span>
+            <span style="height: 3px; width: 25px; background-color: #fff;"></span>
         </div>
-        <div class="menu-bar">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
+        <div class="menu-bar" style="
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            gap: 20px; 
+            margin-right: 20px;
+        ">
+            <a href="#" style="
+                color: #fff; 
+                font-weight: 600; 
+                font-family: 'Montserrat', sans-serif; 
+                font-size: 1rem; 
+                text-decoration: none;
+            ">Home</a>
+            <a href="#" style="
+                color: #fff; 
+                font-weight: 600; 
+                font-family: 'Montserrat', sans-serif; 
+                font-size: 1rem; 
+                text-decoration: none;
+            ">About</a>
+            <a href="#" style="
+                color: #fff; 
+                font-weight: 600; 
+                font-family: 'Montserrat', sans-serif; 
+                font-size: 1rem; 
+                text-decoration: none;
+            ">Contact</a>
         </div>
     </nav>
 
     <!-- Front Page Section -->
-    <section class="front-page">
+    <section class="front-page" style="
+        background-color: #f9f9f9; 
+        padding: 4em 0;
+        text-align: center;
+    ">
         <div class="container">
-            <h1>Time and Thought</h1>
+            <h1 style="
+                font-family: 'Montserrat', sans-serif; 
+                font-size: 3em; 
+                margin-bottom: 0.5em;
+            ">Time and Thought</h1>
             <div class="quote-button-container">
-                <p class="quote">"From the dawn of history to the horizons of tomorrow,</p>
-                <p class="quote" style="color: rgb(231, 151, 3);">knowledge is our greatest adventure."</p>
-                <button class="read-blogs-btn">Read Blogs</button>
-                <!--button class="cmt-blogs-btn"> Leave Comment</button><br><br-->
+                <p class="quote" style="
+                    font-size: 1.2em; 
+                    margin-bottom: 0.5em;
+                ">“From the dawn of history to the horizons of tomorrow,</p>
+                <p class="quote" style="
+                    font-size: 1.2em; 
+                    color: rgb(231, 151, 3); 
+                    margin-bottom: 1em;
+                ">knowledge is our greatest adventure.”</p>
+                <button class="read-blogs-btn" style="
+                    padding: 0.75em 1.5em; 
+                    background-color: #4CAF50; 
+                    color: #fff; 
+                    border: none; 
+                    border-radius: 5px; 
+                    cursor: pointer; 
+                    font-size: 1em;
+                ">Read Blogs</button>
+                <!--button class="cmt-blogs-btn" style="
+                    padding: 0.75em 1.5em; 
+                    background-color: #FFC107; 
+                    color: #333; 
+                    border: none; 
+                    border-radius: 5px; 
+                    cursor: pointer; 
+                    font-size: 1em; 
+                    margin-top: 1em;
+                "> Leave Comment</button><br><br-->
             </div>
         </div>
     </section>
 
     <!-- Blogs Section -->
-    <section id="blogs-section">
+    <section id="blogs-section" style="
+        padding: 2em 0;
+        background-color: #fff;
+    ">
         <div class="container">
             <!-- Author Filter Section -->
-            <div id="author-filter" style="margin: 2em 0; text-align: center;">
-                <label for="author-select" style="font-weight: bold; margin-right: 10px;">Filter by Author:</label>
-                <select id="author-select" style="padding: 0.5em; border-radius: 5px; border: 1px solid #ddd;">
+            <div id="author-filter" style="
+                margin: 2em 0; 
+                text-align: center;
+            ">
+                <label for="author-select" style="
+                    font-weight: bold; 
+                    margin-right: 10px; 
+                    font-size: 1.1em;
+                ">Filter by Author:</label>
+                <select id="author-select" style="
+                    padding: 0.5em; 
+                    border-radius: 5px; 
+                    border: 1px solid #ddd; 
+                    font-size: 1em;
+                ">
                     <option value="all">All Authors</option>
                     <!-- Options will be populated dynamically -->
                 </select>
             </div>
 
             <!-- Blogs Container -->
-            <div id="blogs-container" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+            <div id="blogs-container" style="
+                display: flex; 
+                flex-wrap: wrap; 
+                justify-content: center; 
+                gap: 20px;
+            ">
                 <!-- Blog cards will be injected here dynamically -->
             </div>
 
             <!-- Read Other Blogs Button -->
-            <div class="blog-btn" style="margin-left: 30%; margin-right: 30%; margin-top: 2cm; margin-bottom: 1cm; background-color: rgb(186, 255, 118); color: black; padding: 0.75em; border-radius: 5px; text-align: center;">
-                <a href="coming-soon/index.html" style="color: black; text-decoration: none; font-weight: bold;">Read Other Blogs</a>
+            <div class="blog-btn" style="
+                margin: 2cm 30% 1cm 30%; 
+                background-color: rgb(186, 255, 118); 
+                color: black; 
+                padding: 0.75em; 
+                border-radius: 5px; 
+                text-align: center;
+            ">
+                <a href="coming-soon/index.html" style="
+                    color: black; 
+                    text-decoration: none; 
+                    font-weight: bold;
+                    font-size: 1.1em;
+                ">Read Other Blogs</a>
             </div>
         </div>
     </section>
@@ -128,7 +230,12 @@
     <div class="main"></div>
     <div class="content">
         <i><b style="color:black;">©2024 Time and Thought. All Rights Reserved.</b></i>
-        <b><i style="color: black;">Developed By <span><a href="https://abdulhajees.in" style="color: rgb(0, 0, 0); text-align:underline;">Mr. Abdul Hajees S</a></span></i></b>
+        <b><i style="color: black;">Developed By <span><a href="https://abdulhajees.in" style="
+            color: rgb(0, 0, 0); 
+            text-align: underline; 
+            text-decoration: none;
+        ">Mr.Abdul Hajees S</a></span></i></b>
+        <!--h4>Contact Me : <a href="https://abdulhajees.in" style="color: aqua;">Social Links</a></h4-->
     </div>
     
     <svg style="position:fixed; top:100vh">
@@ -136,7 +243,10 @@
         </defs>
     </svg>
 
-    <!-- Firebase SDKs are NOT included here -->
+    <!-- Firebase SDKs -->
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js"></script>
+
     <!-- Main Script -->
     <script type="module" src="script.js"></script>
     

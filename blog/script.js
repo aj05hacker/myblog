@@ -35,7 +35,7 @@ function createBlogCard(blog) {
     const blogCard = document.createElement('div');
     blogCard.className = 'blog-card';
     blogCard.style.position = 'relative';
-    blogCard.style.width = '300px'; // Set a fixed width for consistency
+    blogCard.style.width = '300px'; // Fixed width for consistency
     blogCard.style.backgroundColor = '#fff';
     blogCard.style.border = '1px solid #ddd';
     blogCard.style.borderRadius = '10px';
@@ -43,8 +43,8 @@ function createBlogCard(blog) {
     blogCard.style.overflow = 'hidden';
     blogCard.style.display = 'flex';
     blogCard.style.flexDirection = 'column';
-    blogCard.style.transition = 'transform 0.3s';
-    
+    blogCard.style.transition = 'transform 0.3s, box-shadow 0.3s';
+
     // Hover effect
     blogCard.addEventListener('mouseover', () => {
         blogCard.style.transform = 'translateY(-5px)';
@@ -115,7 +115,7 @@ function createBlogCard(blog) {
             </div>
         </div>
     `;
-    
+
     // Hover effect for the button
     const blogButton = blogCard.querySelector('.blog-btn a');
     blogButton.addEventListener('mouseover', () => {
@@ -139,10 +139,14 @@ async function loadBlogs() {
         authorsSet.clear(); // Clear existing authors
 
         blogs.forEach(blog => {
-            // Add author to set
-            if (blog.author) {
-                authorsSet.add(blog.author);
+            // Ensure all necessary fields are present
+            if (!blog.title || !blog.description || !blog.author || !blog.link || !blog.image || !blog.date) {
+                console.warn(`Blog with ID ${blog.id} is missing some fields.`);
+                return; // Skip this blog if any field is missing
             }
+
+            // Add author to set
+            authorsSet.add(blog.author);
 
             // Create blog card
             const blogCard = createBlogCard(blog);
