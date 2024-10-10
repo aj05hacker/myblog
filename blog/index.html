@@ -67,11 +67,8 @@
       }
     }
     </script>
-    
-    <!-- Firebase SDK -->
-    <script type="module" src="https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js"></script>
-    <script type="module" src="https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js"></script>
 </head>
+
 
 <body>
     <!-- Fixed Navbar -->
@@ -97,14 +94,32 @@
                 <p class="quote">"From the dawn of history to the horizons of tomorrow,</p>
                 <p class="quote" style="color: rgb(231, 151, 3);">knowledge is our greatest adventure."</p>
                 <button class="read-blogs-btn">Read Blogs</button>
+                <!--button class="cmt-blogs-btn"> Leave Comment</button><br><br-->
             </div>
         </div>
     </section>
 
     <!-- Blogs Section -->
     <section id="blogs-section">
-        <div class="container" id="blogs-container">
-            <!-- Blog Cards will be dynamically injected here -->
+        <div class="container">
+            <!-- Author Filter Section -->
+            <div id="author-filter" style="margin: 2em 0; text-align: center;">
+                <label for="author-select">Filter by Author:</label>
+                <select id="author-select">
+                    <option value="all">All Authors</option>
+                    <!-- Options will be populated dynamically -->
+                </select>
+            </div>
+
+            <!-- Blogs Container -->
+            <div id="blogs-container">
+                <!-- Blog cards will be injected here dynamically -->
+            </div>
+
+            <!-- Read Other Blogs Button -->
+            <div class="blog-btn" style="margin-left: 30%; margin-right: 30%; margin-top: 2cm; margin-bottom: 1cm; background-color: rgb(186, 255, 118); color: black;">
+                <a href="coming-soon/index.html">Read Other Blogs</a>
+            </div>
         </div>
     </section>
 
@@ -114,68 +129,31 @@
     <div class="main"></div>
     <div class="content">
         <i><b style="color:black;">©2024 Time and Thought. All Rights Reserved.</b></i>
-        <b><i style="color: black;">Developed By <Span><a href="https://abdulhajees.in" style="color: rgb(0, 0, 0) ;text-align:underline;">Mr.Abdul Hajees S</a></Span></i></b>
+        <b><i style="color: black;">Developed By <Span><a href="https://abdulhajees.in" style="color: rgb(0, 0, 0); text-align:underline;">Mr.Abdul Hajees S</a></Span></i></b>
     </div>
     
     <svg style="position:fixed; top:100vh">
-      <defs>
-      </defs>
+        <defs>
+        </defs>
     </svg>
 
+    <!-- Firebase SDKs -->
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js"></script>
+
+    <!-- Main Script -->
+    <script type="module" src="script.js"></script>
+    
     <script>
-        // Firebase Configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyAYfSOYiMe8y4BF2Tj7e1kKgBMi6tzuiQ0",
-            authDomain: "time-and-thought.firebaseapp.com",
-            projectId: "time-and-thought",
-            storageBucket: "time-and-thought.appspot.com",
-            messagingSenderId: "302383115904",
-            appId: "1:302383115904:web:a9c880021a3b102ccdc065",
-            measurementId: "G-SWE4Y6BH4M"
-        };
-        
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-        
-        // Function to load blogs from Firestore
-        async function loadBlogs() {
-            const blogsCollection = collection(db, "blogs");
-            const blogSnapshot = await getDocs(blogsCollection);
-            const blogs = blogSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-
-            const blogsContainer = document.getElementById('blogs-container');
-            blogsContainer.innerHTML = ''; // Clear the container
-            
-            // Create blog cards
-            blogs.forEach(blog => {
-                const blogCard = document.createElement('div');
-                blogCard.className = 'blog-card';
-                blogCard.innerHTML = `
-                    <a href="${blog.link}" class="blog-card-link" aria-label="Read more about ${blog.title}"></a>
-                    <div class="blog-title">${blog.title}</div>
-                    <div class="blog-image" style="background-image: url('${blog.image}');"></div>
-                    <div class="blog-date">${blog.date}</div>
-                    <div class="blog-content">
-                        <p class="clamp-2-lines">${blog.description}</p>
-                    </div>
-                    <div class="blog-btn">
-                        <a href="${blog.link}">Open the Blog</a>
-                    </div>
-                `;
-                blogsContainer.appendChild(blogCard);
-            });
-        }
-
-        // Load blogs on page load
-        window.onload = loadBlogs;
-
-        // Smooth scroll to blogs section
         document.querySelector('.read-blogs-btn').addEventListener('click', function() {
             document.getElementById('blogs-section').scrollIntoView({
                 behavior: 'smooth'
             });
         });
+
+        /* document.querySelector('.cmt-blogs-btn').addEventListener('click', function() {
+            window.location.href = 'comment.html';
+        }); */
     </script>
 
 </body>
