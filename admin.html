@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TQRJTHNWF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-2TQRJTHNWF');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Manage Blogs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            padding: 2em;
+        }
+
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 1em;
+            color: #4CAF50;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto 2em auto;
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            padding: 1.5em;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        input, textarea, select {
+            margin-bottom: 1em;
+            padding: 0.75em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        button {
+            padding: 0.75em;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #messages {
+            max-width: 500px;
+            margin: 0 auto 2em auto;
+            text-align: center;
+        }
+
+        .message {
+            margin-bottom: 1em;
+            padding: 0.75em;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        /* Existing Blogs List */
+        #existing-blogs {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 1.5em;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        #blog-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .blog-item {
+            border-bottom: 1px solid #ddd;
+            padding: 1em 0;
+        }
+
+        .blog-item:last-child {
+            border-bottom: none;
+        }
+
+        .blog-item h3 {
+            margin: 0 0 0.5em 0;
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+        }
+
+        .blog-item p {
+            margin: 0.25em 0;
+            color: #666;
+        }
+
+        .blog-item a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .blog-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Password Protection */
+        #login-container, #admin-panel {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            form, #existing-blogs {
+                padding: 1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Login Container -->
+    <div id="login-container">
+        <h1>Admin Login</h1>
+        <form id="login-form">
+            <input type="password" id="admin-password" placeholder="Enter Admin Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <div id="login-message" class="message"></div>
+        <button id="send-reset-email" style="display: block; margin: 1em auto; padding: 0.5em 1em; background-color: #FFC107; color: #333; border: none; border-radius: 5px; cursor: pointer;">Forgot Password?</button>
+        <div id="reset-message" class="message"></div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div id="admin-panel" class="hidden">
+        <h1>Manage Blogs</h1>
+
+        <!-- Add New Blog Form -->
+        <h2>Add New Blog</h2>
+        <form id="add-blog-form">
+            <input type="text" id="new-blog-title" placeholder="Blog Title" required>
+            <textarea id="new-blog-description" placeholder="Blog Description" required></textarea>
+            <input type="text" id="new-blog-author" placeholder="Author Name" required>
+            <input type="url" id="new-blog-link" placeholder="Blog Link" required>
+            <input type="url" id="new-blog-image" placeholder="Image URL" required>
+            <button type="submit">Add Blog</button>
+        </form>
+        <div id="add-form-message" class="message"></div>
+
+        <!-- Update Blog Form -->
+        <h2>Update Blog</h2>
+        <form id="update-blog-form">
+            <input type="text" id="update-blog-id" placeholder="Blog ID" required>
+            <input type="text" id="update-blog-title" placeholder="Blog Title" required>
+            <textarea id="update-blog-description" placeholder="Blog Description" required></textarea>
+            <input type="text" id="update-blog-author" placeholder="Author Name" required>
+            <input type="url" id="update-blog-link" placeholder="Blog Link" required>
+            <input type="url" id="update-blog-image" placeholder="Image URL" required>
+            <button type="submit">Update Blog</button>
+        </form>
+        <div id="update-form-message" class="message"></div>
+
+        <!-- Delete Blog Form -->
+        <h2>Delete Blog</h2>
+        <form id="delete-blog-form">
+            <input type="text" id="delete-blog-id" placeholder="Blog ID to delete" required>
+            <button type="submit">Delete Blog</button>
+        </form>
+        <div id="delete-form-message" class="message"></div>
+
+        <!-- Existing Blogs List -->
+        <h2>Existing Blogs</h2>
+        <div id="existing-blogs">
+            <ul id="blog-list">
+                <!-- Existing blog items will be generated dynamically using JavaScript -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
+        import { getFirestore, collection, getDocs, doc, updateDoc, deleteDoc, addDoc } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js";
+        import { getAuth, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAYfSOYiMe8y4BF2Tj7e1kKgBMi6tzuiQ0",
+            authDomain: "time-and-thought.firebaseapp.com",
+            projectId: "time-and-thought",
+            storageBucket: "time-and-thought.appspot.com",
+            messagingSenderId: "302383115904",
+            appId: "1:302383115904:web:a9c880021a3b102ccdc065",
+            measurementId: "G-SWE4Y6BH4M"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const auth = getAuth(app);
+
+        // Elements
+        const loginForm = document.getElementById('login-form');
+        const adminPanel = document.getElementById('admin-panel');
+        const loginMessage = document.getElementById('login-message');
+        const sendResetEmailButton = document.getElementById('send-reset-email');
+        const resetMessage = document.getElementById('reset-message');
+
+        const addBlogForm = document.getElementById('add-blog-form');
+        const updateBlogForm = document.getElementById('update-blog-form');
+        const deleteBlogForm = document.getElementById('delete-blog-form');
+        const addFormMessage = document.getElementById('add-form-message');
+        const updateFormMessage = document.getElementById('update-form-message');
+        const deleteFormMessage = document.getElementById('delete-form-message');
+        const blogListContainer = document.getElementById('blog-list');
+
+        const adminPassword = "ajeajees"; // Admin password
+
+        // Function to render existing blogs
+        async function renderBlogs() {
+            const blogsCollection = collection(db, "blogs");
+            try {
+                const blogSnapshot = await getDocs(blogsCollection);
+                blogListContainer.innerHTML = ''; // Clear existing blogs
+
+                if (blogSnapshot.empty) {
+                    blogListContainer.innerHTML = '<p>No blogs available.</p>';
+                    return;
+                }
+
+                blogSnapshot.forEach(doc => {
+                    const blog = doc.data();
+                    const blogItem = document.createElement('li');
+                    blogItem.className = 'blog-item';
+                    blogItem.innerHTML = `
+                        <h3>${blog.title} (ID: ${doc.id})</h3>
+                        <p><strong>Description:</strong> ${blog.description}</p>
+                        <p><strong>Author:</strong> ${blog.author}</p>
+                        <p><strong>Link:</strong> <a href="${blog.link}" target="_blank">${blog.link}</a></p>
+                        <p><strong>Image:</strong> <img src="${blog.image}" alt="${blog.title}" style="max-width: 150px;"></p>
+                    `;
+                    blogListContainer.appendChild(blogItem);
+                });
+            } catch (error) {
+                blogListContainer.innerHTML = '<p style="color: red;">Error loading blogs.</p>';
+                console.error("Error fetching blogs: ", error);
+            }
+        }
+
+        // Login event listener
+        loginForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const password = document.getElementById('admin-password').value.trim();
+
+            if (password === adminPassword) {
+                adminPanel.classList.remove('hidden');
+                document.getElementById('login-container').classList.add('hidden');
+                renderBlogs(); // Load existing blogs
+                loginMessage.innerHTML = ''; // Clear message
+            } else {
+                loginMessage.innerHTML = '<p class="error">Incorrect password!</p>';
+            }
+        });
+
+        // Send password reset email
+        sendResetEmailButton.addEventListener('click', async () => {
+            try {
+                await sendPasswordResetEmail(auth, "admin@abdulhajees.in");
+                resetMessage.innerHTML = '<p class="success">Password reset email sent!</p>';
+            } catch (error) {
+                resetMessage.innerHTML = `<p class="error">Error sending email: ${error.message}</p>`;
+                console.error("Error sending password reset email: ", error);
+            }
+        });
+
+        // Add new blog event listener
+        addBlogForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const title = document.getElementById('new-blog-title').value.trim();
+            const description = document.getElementById('new-blog-description').value.trim();
+            const author = document.getElementById('new-blog-author').value.trim();
+            const link = document.getElementById('new-blog-link').value.trim();
+            const image = document.getElementById('new-blog-image').value.trim();
+
+            if (!title || !description || !author || !link || !image) {
+                addFormMessage.innerHTML = '<p class="error">All fields are required.</p>';
+                return;
+            }
+
+            try {
+                await addDoc(collection(db, "blogs"), {
+                    title,
+                    description,
+                    author,
+                    link,
+                    image,
+                    date: new Date().toLocaleDateString()
+                });
+                addFormMessage.innerHTML = '<p class="success">Blog added successfully!</p>';
+                addBlogForm.reset();
+                renderBlogs(); // Refresh the blog list
+            } catch (error) {
+                addFormMessage.innerHTML = `<p class="error">Error adding blog: ${error.message}</p>`;
+                console.error("Error adding blog: ", error);
+            }
+        });
+
+        // Update blog event listener
+        updateBlogForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const blogId = document.getElementById('update-blog-id').value.trim();
+            const title = document.getElementById('update-blog-title').value.trim();
+            const description = document.getElementById('update-blog-description').value.trim();
+            const author = document.getElementById('update-blog-author').value.trim();
+            const link = document.getElementById('update-blog-link').value.trim();
+            const image = document.getElementById('update-blog-image').value.trim();
+
+            if (!blogId || !title || !description || !author || !link || !image) {
+                updateFormMessage.innerHTML = '<p class="error">All fields are required.</p>';
+                return;
+            }
+
+            try {
+                const blogRef = doc(db, "blogs", blogId);
+                await updateDoc(blogRef, {
+                    title,
+                    description,
+                    author,
+                    link,
+                    image
+                });
+                updateFormMessage.innerHTML = '<p class="success">Blog updated successfully!</p>';
+                updateBlogForm.reset();
+                renderBlogs(); // Refresh the blog list
+            } catch (error) {
+                updateFormMessage.innerHTML = `<p class="error">Error updating blog: ${error.message}</p>`;
+                console.error("Error updating blog: ", error);
+            }
+        });
+
+        // Delete blog event listener
+        deleteBlogForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const blogId = document.getElementById('delete-blog-id').value.trim();
+
+            if (!blogId) {
+                deleteFormMessage.innerHTML = '<p class="error">Blog ID is required.</p>';
+                return;
+            }
+
+            try {
+                const blogRef = doc(db, "blogs", blogId);
+                await deleteDoc(blogRef);
+                deleteFormMessage.innerHTML = '<p class="success">Blog deleted successfully!</p>';
+                deleteBlogForm.reset();
+                renderBlogs(); // Refresh the blog list
+            } catch (error) {
+                deleteFormMessage.innerHTML = `<p class="error">Error deleting blog: ${error.message}</p>`;
+                console.error("Error deleting blog: ", error);
+            }
+        });
+
+        // Initial render of existing blogs
+        // Only when admin logs in
+    </script>
+</body>
+</html>
