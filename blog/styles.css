@@ -254,6 +254,7 @@ body {
   margin-bottom: 20px;
   margin-left: 10%;
   width: 80%;
+  align-items: center;
 }
 
 .blog-btn a {
