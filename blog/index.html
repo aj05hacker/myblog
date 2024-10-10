@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
-    <meta name="description" content="Blogs by abdul hajees, SBO, Time and Thought">
+    <meta name="description" content="Blogs by Abdul Hajees, SBO, Time and Thought">
     <title>Time and Thought - Discover and Explore Blogs</title>
 
     <!-- Meta Author Tag -->
@@ -37,8 +37,6 @@
     <meta name="twitter:image:alt" content="Preview of Time and Thought blog showcase">
 
     <!-- Link to Favicon -->
-    <!--link rel="icon" href="favicon.ico" type="image/x-icon"-->
-
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
@@ -102,107 +100,48 @@
     </section>
 
     <!-- Blogs Section -->
-    <section id="blogs-section"> <!--The content will be modified (start)-->
+    <section id="blogs-section">
         <div class="container">
-            <!-- Blog Cards -->
-
-            <!--==============Blog 1===============================-->
-
-
-            <div class="blog-card"> 
-                <a href="../blogs/blackhole/index.html" class="blog-card-link" style="display: block; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; z-index: 1;" aria-label="Read more about Black Holes"></a>
-                <div class="blog-title">The Black Holes</div>
-                <div class="blog-image" style="background-image: url('./blog-cards/card-blackhole.jpg');"></div>
-                <div class="blog-date">August 12, 2024</div> 
-                <div class="blog-content">
-                    <p class="clamp-2-lines">Delve into the mysteries of black holes, the enigmatic giants of the universe. Explore their fascinating phenomena and the science behind these cosmic wonders.</p>
-                </div>
-                <div class="blog-btn">
-                    <a href="../blogs/blackhole/index.html" aria-label="Open the Blog about black holes from our blog">Open The Blog</a>
-                </div>
-
+            <!-- Author Filter Section -->
+            <div id="author-filter" style="margin: 2em 0; text-align: center;">
+                <label for="author-select" style="font-weight: bold; margin-right: 10px;">Filter by Author:</label>
+                <select id="author-select" style="padding: 0.5em; border-radius: 5px; border: 1px solid #ddd;">
+                    <option value="all">All Authors</option>
+                    <!-- Options will be populated dynamically -->
+                </select>
             </div>
 
-            <!--==============Blog 2===============================-->
-
-            <div class="blog-card"> 
-                <a href="../blogs/beautiful-gardens/index.html" class="blog-card-link" style="display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;"aria-label="read more about Beautiful Gardens in the world"></a>
-                <div class="blog-title">Beautiful Gardens</div>
-                <div class="blog-image" style="background-image: url('./blog-cards/card-gardens.jpg');"></div>
-                <div class="blog-date">August 14, 2024</div> 
-                <div class="blog-content">
-                    <p class="clamp-2-lines">Unveil the world’s most beautiful gardens, where nature's artistry flourishes. Explore breathtaking landscapes that inspire serenity and wonder.</p>
-                </div>
-                <div class="blog-btn">
-                    <a href="../blogs/beautiful-gardens/index.html">Open the Blog</a>
-                </div>
-
+            <!-- Blogs Container -->
+            <div id="blogs-container" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+                <!-- Blog cards will be injected here dynamically -->
             </div>
 
-            <!--==============Blog 3===============================-->
-
-            <div class="blog-card"> 
-                <a href="../blogs/sleep/index.html" class="blog-card-link" style="display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;" aria-label="Read More about Sleep and Science behind it."></a>
-                <div class="blog-title">Science of Sleep</div>
-                <div class="blog-image" style="background-image: url('./blog-cards/card-sleep.jpg');"></div>
-                <div class="blog-date">August 15, 2024</div> 
-                <div class="blog-content">
-                    <p class="clamp-2-lines">Discover the science behind sleep and its crucial role in maintaining your health. Learn tips for better rest and why quality sleep is essential for a thriving life.</p>
-                </div>
-                <div class="blog-btn">
-                    <a href="../blogs/sleep/index.html">Open the Blog</a>
-                </div>
-
+            <!-- Read Other Blogs Button -->
+            <div class="blog-btn" style="margin-left: 30%; margin-right: 30%; margin-top: 2cm; margin-bottom: 1cm; background-color: rgb(186, 255, 118); color: black; padding: 0.75em; border-radius: 5px; text-align: center;">
+                <a href="coming-soon/index.html" style="color: black; text-decoration: none; font-weight: bold;">Read Other Blogs</a>
             </div>
-
-            <!--==============Blog 4===============================-->
-
-            <div class="blog-card"> 
-                <a href="../blogs/social-media-adiction/index.html" class="blog-card-link" style="display: block; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; z-index: 1;" aria-label="Read more about Black Holes"></a>
-                <div class="blog-title">Social Media Addiction</div>
-                <div class="blog-image" style="background-image: url('./blog-cards/card-socialmedia.jpg');"></div>
-                <div class="blog-date">August 16, 2024</div> 
-                <div class="blog-content">
-                    <p class="clamp-2-lines">Explore the hidden dangers of social media addiction and how it impacts mental health. Learn effective strategies to reclaim your time and well-being.</p>
-                </div>
-                <div class="blog-btn">
-                    <a href="..blogs/social-media-adiction/index.html" aria-label="Open the Blog about black holes from our blog">Open The Blog</a>
-                </div>
-
-            </div> <!-- content modification (end)-->
-
-
-            
-            <div class="blog-btn" style="margin-left: 30%;margin-right: 30%;margin-top: 2cm;margin-bottom: 1cm;background-color: rgb(186, 255, 118);color: black;">
-                <a href="coming-soon/index.html">Read Other Blogs</a>
-            </div>
-            
         </div>
     </section>
 
     <br><br><br><br><br><br>
 
     <div class="footer">
-    <i><b style="color:black;">©2024 Time and Thought. All Rights Reserved.</b></i><br>
-    <b><i style="color: black;">Developed By <Span><a href="https://abdulhajees.in" style="color: rgb(0, 0, 0) ;text-align:underline;">Mr.Abdul Hajees S</a></Span></i></b>
+        <i><b style="color:black;">©2024 Time and Thought. All Rights Reserved.</b></i><br><br>
+        <b><i style="color: black;">Developed By <Span><a href="https://abdulhajees.in" style="color: rgb(0, 0, 0); text-align:underline;">Mr.Abdul Hajees S</a></Span></i></b>
     </div>
 
     <script src="script.js"></script>
 
-        <script>
+    <script>
         document.querySelector('.read-blogs-btn').addEventListener('click', function() {
             document.getElementById('blogs-section').scrollIntoView({
                 behavior: 'smooth'
             });
         });
 
-
-   
-       /* document.querySelector('.cmt-blogs-btn').addEventListener('click', function() {
+        /* document.querySelector('.cmt-blogs-btn').addEventListener('click', function() {
             window.location.href = 'comment.html';
-            });*/
-        </script>
-
- 
+        }); */
+    </script>
 </body>
 </html>

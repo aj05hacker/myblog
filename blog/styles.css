@@ -1,319 +1,308 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #000; /* Set the entire website background to black */
-    color: #fff; /* Default text color */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #000; /* Set the entire website background to black */
+  color: #fff; /* Default text color */
 }
 
 body {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
-
 
 /* Navbar */
 .navbar {
-    position: fixed;
-    top: 20px; /* Adjust the distance from the top of the screen */
-    left: 50%;
-    transform: translateX(-50%); /* Center the navbar horizontally */
-    width: 95%; /* Adjust the width to make the navbar longer */
-    max-width: 1200px; /* Set a maximum width to prevent it from being too large on wide screens */
-    background-color: #ffffffb9;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between; /* Space between logo and hamburger menu */
-    align-items: center;
-    z-index: 1000;
-    border-radius: 10px; /* Add some rounding for a floating effect */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for a floating effect */
+  position: fixed;
+  top: 20px; /* Adjust the distance from the top of the screen */
+  left: 50%;
+  transform: translateX(-50%); /* Center the navbar horizontally */
+  width: 95%; /* Adjust the width to make the navbar longer */
+  max-width: 1200px; /* Set a maximum width to prevent it from being too large on wide screens */
+  background-color: #ffffffb9;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between; /* Space between logo and hamburger menu */
+  align-items: center;
+  z-index: 1000;
+  border-radius: 10px; /* Add some rounding for a floating effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for a floating effect */
 }
 
 /* Adjustments for smaller screens */
 @media (max-width: 768px) {
-    .navbar {
-        width: 90%; /* Adjust width for smaller screens */
-        left: 50%;
-        transform: translateX(-50%);
-    }
+  .navbar {
+      width: 90%; /* Adjust width for smaller screens */
+      left: 50%;
+      transform: translateX(-50%);
+  }
 }
 
-
 .logo {
-    height: 40px; /* Adjust the height to fit your design */
+  height: 40px; /* Adjust the height to fit your design */
 }
 
 .hamburger-menu {
-    display: none; /* Hidden by default, shown on smaller screens */
-    flex-direction: column;
-    cursor: pointer;
-    padding-right: 1cm;
-    margin-right: 0cm;
+  display: none; /* Hidden by default, shown on smaller screens */
+  flex-direction: column;
+  cursor: pointer;
+  padding-right: 1cm;
+  margin-right: 0cm;
 }
 
 .hamburger-menu span {
-    height: 3px;
-    width: 25px;
-    background-color: white;
-    margin: 4px 0;
-    transition: 0.4s;
+  height: 3px;
+  width: 25px;
+  background-color: white;
+  margin: 4px 0;
+  transition: 0.4s;
 }
 
 .menu-bar {
-    margin-left: auto; /* Pushes the menu bar to the right */
-    display: flex;
-    align-items: right;
+  margin-left: auto; /* Pushes the menu bar to the right */
+  display: flex;
+  align-items: right;
 }
 
 .menu-bar a {
-    color: white;
-    margin-left: 10px;
-    text-decoration: none;
-    font-size: 18px;
-    padding-right: 2cm;
+  color: white;
+  margin-left: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  padding-right: 2cm;
 }
 
 .menu-bar a:hover {
-    color: #ff4500;
+  color: #ff4500;
 }
 
 /* Adjustments for smaller screens */
 @media (max-width: 768px) {
-    .menu-bar {
-        display: none; /* Hide normal menu on small screens */
-    }
+  .menu-bar {
+      display: none; /* Hide normal menu on small screens */
+  }
 
-    .hamburger-menu {
-        display: flex; /* Show hamburger menu on smaller screens */
-    }
+  .hamburger-menu {
+      display: flex; /* Show hamburger menu on smaller screens */
+  }
 
-    .navbar.active .menu-bar {
-        display: flex;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: #7e560075;
-        flex-direction: column;
-        width: 100%;
-    }
+  .navbar.active .menu-bar {
+      display: flex;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: #7e560075;
+      flex-direction: column;
+      width: 100%;
+  }
 
-    .menu-bar a {
-        margin: 15px 0;
-        text-align: center;
-    }
+  .menu-bar a {
+      margin: 15px 0;
+      text-align: center;
+  }
 }
 
 /* Front Page Section */
 .front-page {
-    height: 100vh;
-    background: url('images/background.svg') no-repeat center center/cover;
-    display: flex;
-    align-items: flex-start; /* Align items to the start (left) */
-    justify-content: flex-start;
-    flex-direction: column;
-    color: white;
-    text-align: left; /* Align text to the left */
-    padding: 50px; /* Add padding for better alignment */
+  height: 100vh;
+  background: url('images/background.svg') no-repeat center center/cover;
+  display: flex;
+  align-items: flex-start; /* Align items to the start (left) */
+  justify-content: flex-start;
+  flex-direction: column;
+  color: white;
+  text-align: left; /* Align text to the left */
+  padding: 50px; /* Add padding for better alignment */
 }
 
 .front-page h1 {
-    font-size: 58px;
-    padding-top: 50px;
-    margin-bottom: 0px;
-    font-style: oblique;
-    text-decoration: underline;
+  font-size: 58px;
+  padding-top: 50px;
+  margin-bottom: 0px;
+  font-style: oblique;
+  text-decoration: underline;
 }
 
 .quote-button-container {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .front-page .quote {
-    font-size: 30px;
-    font-style: italic;
-    margin-bottom: 20px; /* Add space between the quote and the button */
+  font-size: 30px;
+  font-style: italic;
+  margin-bottom: 20px; /* Add space between the quote and the button */
 }
 
 .read-blogs-btn {
-    padding: 15px 30px;
-    background-color: #76ffc6;
-    border: none;
-    color: rgb(0, 0, 0);
-    font-size: 18px;
-    cursor: pointer;
-    border: solid 3px rgb(0, 0, 0);
+  padding: 15px 30px;
+  background-color: #76ffc6;
+  border: none;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  cursor: pointer;
+  border: solid 3px rgb(0, 0, 0);
 }
 
 .read-blogs-btn:hover {
-    background-color: #ff4500;
+  background-color: #ff4500;
 }
 
 .blogs-section {
-    padding: 50px 0;
-    background-color: #000; /* Set background color to black */
+  padding: 50px 0;
+  background-color: #000; /* Set background color to black */
 }
 
 .container {
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 /* Blog Card */
 .blog-card {
-    background: #000000; /* Grayscale background for normal state */
-    color: white; /* Light text color */
-    padding: 0;
-    margin: 20px 0;
-    width: 23%; /* Adjust width to fit 4 cards in a row */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 8px; /* Rounded corners */
-    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out, background-color 0.4s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    position: relative; /* For positioning the button */
+  background: #000000; /* Grayscale background for normal state */
+  color: white; /* Light text color */
+  padding: 0;
+  margin: 20px 0;
+  width: 23%; /* Adjust width to fit 4 cards in a row */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px; /* Rounded corners */
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out, background-color 0.4s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative; /* For positioning the button */
 }
 
 /* Blog Card Hover Effect */
 .blog-card:hover {
-    transform: scale(1.08);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-    background-color: #fa5e20; /* Brighter grayscale background on hover */
-    color: black;
+  transform: scale(1.08);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  background-color: #fa5e20; /* Brighter grayscale background on hover */
+  color: black;
 }
 
 /* Blog Title */
 .blog-title {
-    padding: 15px;
-    font-size: 20px;
-    font-weight: bold;
-    color: rgb(255, 255, 255); /* Ensure the title text stands out */
-    text-align: left;
-    background-color: transparent; /* Set the background to transparent */
+  padding: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(255, 255, 255); /* Ensure the title text stands out */
+  text-align: left;
+  background-color: transparent; /* Set the background to transparent */
 }
-
 
 /* Blog Image */
 .blog-image {
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-    transition: filter 0.4s ease-in-out; /* Smooth transition for filter */
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  transition: filter 0.4s ease-in-out; /* Smooth transition for filter */
 }
-
 
 .blog-date {
-    font-size: 14px;
-    color: #a6fff8; /* Light gray color */
-    padding: 10px 20px;
-    text-align: left;
-    font-style: italic;
-    background-color: transparent; /* Ensure the background is transparent */
+  font-size: 14px;
+  color: #a6fff8; /* Light gray color */
+  padding: 10px 20px;
+  text-align: left;
+  font-style: italic;
+  background-color: transparent; /* Ensure the background is transparent */
 }
 
-
-/* Blog Card Hover Effect on Image */
-.blog-card:hover .blog-image {
-    filter: grayscale(100%); /* Apply grayscale filter on hover */
+.blog-author {
+  font-size: 14px;
+  color: #a6fff8; /* Light gray color */
+  padding: 0 20px;
+  text-align: left;
+  font-style: italic;
 }
 
-/* Blog Content */
 .blog-content {
-    text-align: justify;
-    padding-left: 20px;
-    padding-right: 20px;
-    flex-grow: 1;
-    max-height: 80px; /* Set a fixed height for the description */
-    overflow: hidden; /* Hide overflow text */
-    text-overflow: ellipsis; /* Add ellipsis to indicate more text */
-    display: -webkit-box;
-    /*-webkit-line-clamp: 2; /* Limit to 2 lines 
-    -webkit-box-orient: vertical;*/
-    transition: background-color 0.4s ease-in-out; /* Smooth transition for background color change */
-    margin-bottom: 40px; /* Increased margin to create space for the button */
+  text-align: justify;
+  padding-left: 20px;
+  padding-right: 20px;
+  flex-grow: 1;
+  max-height: none; /* Remove max-height to allow full description */
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Add ellipsis to indicate more text */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  -webkit-box-orient: vertical;
+  transition: background-color 0.4s ease-in-out; /* Smooth transition for background color change */
+  margin-bottom: 20px; /* Reduced margin to create space for the button */
 }
 
-/* Blog Card Hover Effect */
 .blog-card:hover .blog-content {
-    background-color: rgba(255, 255, 255, 0.5); /* White background with 50% transparency */
-    color: black; /* Change text color for better readability */
+  background-color: rgba(255, 255, 255, 0.5); /* White background with 50% transparency */
+  color: black; /* Change text color for better readability */
 }
 
 /* Blog Button */
 .blog-btn {
-    position: static;
-    bottom: 15px; /* Adjust as needed for spacing */
-    left: 15px; /* Adjust as needed for spacing */
-    background-color: #b1fff5;
-    border: none;
-    border-radius: 20px; /* Rounded corners */
-    padding: 8px 15px; /* Small size */
-    color: rgb(2, 2, 2);
-    font-weight: bold;
-    cursor: pointer;
-    text-align: center;
-    margin-bottom: 20px;
-    margin-left: 10%;
-    width: 80%;
+  background-color: #b1fff5;
+  border: none;
+  border-radius: 20px; /* Rounded corners */
+  padding: 8px 15px; /* Small size */
+  color: rgb(2, 2, 2);
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-left: 10%;
+  width: 80%;
 }
 
-
-
 .blog-btn a {
-    text-decoration: none;
-    color: rgb(0, 0, 0);
+  text-decoration: none;
+  color: rgb(0, 0, 0);
 }
 
 .blog-btn a:hover {
-    color: #000000;
+  color: #000000;
 }
 
 /* Responsive Design */
 @media (max-width: 992px) {
-    .blog-card {
-        width: 48%;
-    }
+  .blog-card {
+      width: 48%;
+  }
 
-    .front-page h1 {
-        font-size: 48px;
-    }
+  .front-page h1 {
+      font-size: 48px;
+  }
 }
 
 @media (max-width: 768px) {
-    .blog-card {
-        width: 100%;
-    }
+  .blog-card {
+      width: 100%;
+  }
 
-    .front-page {
-        padding: 20px;
-                align-items: flex-start; /* Align items to the start (left) */
-    }
-    
+  .front-page {
+      padding: 20px;
+      align-items: flex-start; /* Align items to the start (left) */
+  }
+  
+  .front-page h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+  }
 
-    .front-page h1 {
-        font-size: 36px;
-        margin-bottom: 10px;
-    }
+  .read-blogs-btn {
+      font-size: 16px;
+      padding: 10px 20px;
+      margin-top: 10px;
+  }
 
-    .read-blogs-btn {
-        font-size: 16px;
-        padding: 10px 20px;
-        margin-top: 10px;
-    }
+  .quote-button-container {
+      flex-direction: column; /* Stack quote and button vertically */
+  }
 
-    .quote-button-container {
-        flex-direction: column; /* Stack quote and button vertically */
-    }
-
-    .quote {
-        margin-bottom: 10px; /* Add margin between quote and button */
-    }
+  .quote {
+      margin-bottom: 10px; /* Add margin between quote and button */
+  }
 }
-
 
 .footer {
   background-color: rgb(146, 200, 255);
@@ -325,23 +314,23 @@ body {
 /* For large screens (desktops) */
 @media only screen and (min-width: 1200px) {
   .footer {
-    padding-left: 20%;
-    padding-right: 20%;
+      padding-left: 20%;
+      padding-right: 20%;
   }
 }
 
 /* For medium screens (tablets) */
 @media only screen and (min-width: 768px) and (max-width: 1199px) {
   .footer {
-    padding-left: 15%;
-    padding-right: 15%;
+      padding-left: 15%;
+      padding-right: 15%;
   }
 }
 
 /* For small screens (mobiles) */
 @media only screen and (max-width: 767px) {
   .footer {
-    padding-left: 10%;
-    padding-right: 10%;
+      padding-left: 10%;
+      padding-right: 10%;
   }
 }
