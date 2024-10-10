@@ -191,6 +191,7 @@ body {
   color: rgb(255, 255, 255); /* Ensure the title text stands out */
   text-align: left;
   background-color: transparent; /* Set the background to transparent */
+  text-align: justify;
 }
 
 /* Blog Image */
