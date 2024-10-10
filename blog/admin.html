@@ -335,39 +335,48 @@
             }
         });
 
-        // Update blog event listener
-        updateBlogForm.addEventListener('submit', async (event) => {
-            event.preventDefault();
+// Update blog event listener
+updateBlogForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
 
-            const blogId = document.getElementById('update-blog-id').value.trim();
-            const title = document.getElementById('update-blog-title').value.trim();
-            const description = document.getElementById('update-blog-description').value.trim();
-            const author = document.getElementById('update-blog-author').value.trim();
-            const link = document.getElementById('update-blog-link').value.trim();
-            const image = document.getElementById('update-blog-image').value.trim();
+    const blogId = document.getElementById('update-blog-id').value.trim();
+    const title = document.getElementById('update-blog-title').value.trim();
+    const description = document.getElementById('update-blog-description').value.trim();
+    const author = document.getElementById('update-blog-author').value.trim();
+    const link = document.getElementById('update-blog-link').value.trim();
+    const image = document.getElementById('update-blog-image').value.trim();
 
-            if (!blogId || !title || !description || !author || !link || !image) {
-                updateFormMessage.innerHTML = '<p class="error">All fields are required.</p>';
-                return;
-            }
+    if (!blogId) {
+        updateFormMessage.innerHTML = '<p class="error">Blog ID is required.</p>';
+        return;
+    }
 
-            try {
-                const blogRef = doc(db, "blogs", blogId);
-                await updateDoc(blogRef, {
-                    title,
-                    description,
-                    author,
-                    link,
-                    image
-                });
-                updateFormMessage.innerHTML = '<p class="success">Blog updated successfully!</p>';
-                updateBlogForm.reset();
-                renderBlogs(); // Refresh the blog list
-            } catch (error) {
-                updateFormMessage.innerHTML = `<p class="error">Error updating blog: ${error.message}</p>`;
-                console.error("Error updating blog: ", error);
-            }
-        });
+    try {
+        const blogRef = doc(db, "blogs", blogId);
+        
+        // Prepare the updates object
+        const updates = {};
+        if (title) updates.title = title;
+        if (description) updates.description = description;
+        if (author) updates.author = author;
+        if (link) updates.link = link;
+        if (image) updates.image = image;
+
+        // Only update fields that are present in the updates object
+        if (Object.keys(updates).length > 0) {
+            await updateDoc(blogRef, updates);
+            updateFormMessage.innerHTML = '<p class="success">Blog updated successfully!</p>';
+        } else {
+            updateFormMessage.innerHTML = '<p class="error">No fields to update.</p>';
+        }
+
+        updateBlogForm.reset();
+        renderBlogs(); // Refresh the blog list
+    } catch (error) {
+        updateFormMessage.innerHTML = `<p class="error">Error updating blog: ${error.message}</p>`;
+        console.error("Error updating blog: ", error);
+    }
+});
 
         // Delete blog event listener
         deleteBlogForm.addEventListener('submit', async (event) => {
