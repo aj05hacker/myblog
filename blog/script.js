@@ -4,7 +4,6 @@ document.querySelector('.hamburger-menu').addEventListener('click', function () 
     document.querySelector('.navbar').classList.toggle('active');
 });
 
-
 // Import necessary Firebase modules
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
 import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js";
