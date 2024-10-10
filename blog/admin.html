@@ -178,16 +178,17 @@
         <div id="add-form-message" class="message"></div>
 
         <!-- Update Blog Form -->
-        <h2>Update Blog</h2>
-        <form id="update-blog-form">
-            <input type="text" id="update-blog-id" placeholder="Blog ID" required>
-            <input type="text" id="update-blog-title" placeholder="Blog Title" required>
-            <textarea id="update-blog-description" placeholder="Blog Description" required></textarea>
-            <input type="text" id="update-blog-author" placeholder="Author Name" required>
-            <input type="url" id="update-blog-link" placeholder="Blog Link" required>
-            <input type="url" id="update-blog-image" placeholder="Image URL" required>
-            <button type="submit">Update Blog</button>
-        </form>
+<h2>Update Blog</h2>
+<form id="update-blog-form">
+    <input type="text" id="update-blog-id" placeholder="Blog ID" required>
+    <input type="text" id="update-blog-title" placeholder="Blog Title">
+    <textarea id="update-blog-description" placeholder="Blog Description"></textarea>
+    <input type="text" id="update-blog-author" placeholder="Author Name">
+    <input type="url" id="update-blog-link" placeholder="Blog Link">
+    <input type="url" id="update-blog-image" placeholder="Image URL">
+    <button type="submit">Update Blog</button>
+</form>
+
         <div id="update-form-message" class="message"></div>
 
         <!-- Delete Blog Form -->
@@ -377,6 +378,7 @@ updateBlogForm.addEventListener('submit', async (event) => {
         console.error("Error updating blog: ", error);
     }
 });
+
 
         // Delete blog event listener
         deleteBlogForm.addEventListener('submit', async (event) => {
