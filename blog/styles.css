@@ -161,12 +161,12 @@ body {
 
 /* Blog Card */
 .blog-card {
-  background: #202020; /* Grayscale background for normal state */
+  background: #3a3a3a; /* Grayscale background for normal state */
   color: white; /* Light text color */
   padding: 0;
   margin: 20px 0;
   width: 23%; /* Adjust width to fit 4 cards in a row */
-  box-shadow: 0 4px 8px rgba(240, 255, 37, 0.397);
+  box-shadow: 0 4px 8px rgba(240, 255, 37, 0.342);
   border-radius: 8px; /* Rounded corners */
   transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out, background-color 0.4s ease-in-out;
   display: flex;
