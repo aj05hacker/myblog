@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Blog Update Request</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(to right, #f0f0f0, #d3cce3);
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            background-color: #6a11cb;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+        }
+
+        .instructions {
+            text-align:justify;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1em;
+            color: #ff1a1a;
+            padding: 10px;
+            border: 1px dashed #6a11cb; /* Dashed border to highlight instructions */
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        form {
+            max-width: 400px; /* Set a maximum width for the form */
+            margin: auto; /* Center the form */
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        input[type="text"], input[type="url"], input[type="number"] {
+            width: 90%;
+            padding: 15px;
+            margin: 10px 0px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        input[type="submit"] {
+            background-color: #ff6a00;
+            color: white;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ff9a00;
+        }
+
+        /* Responsive Table */
+        .table-responsive {
+            overflow-x: auto; /* Allow horizontal scroll on small screens */
+            border-radius: 10px; /* Optional: Add border-radius */
+            margin-top: 20px; /* Space between the form and the table */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #6a11cb;
+            color: white;
+        }
+
+        td {
+            background-color: #f9f9f9;
+        }
+
+        td a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        td a:hover {
+            text-decoration: underline;
+        }
+
+        .status-pending {
+            color: #ffcc00; /* Yellow for pending */
+        }
+
+        .status-accepted {
+            color: #28a745; /* Green for accepted */
+        }
+
+        .status-rejected {
+            color: #dc3545; /* Red for rejected */
+        }
+
+        .captcha {
+            font-weight: bold;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Blog Update Request</h1>
+    </header>
+
+    <div class="instructions">
+        To add your blog to our showcase, please enter your real name and the blog link. The admin will verify the blog and add it to our site as soon as possible.
+    </div>
+
+    <form id="request-form">
+        <input type="text" id="user-name" placeholder="Your Name" required>
+        <input type="url" id="blog-link" placeholder="Blog Link" required>
+        <div class="captcha" id="captcha-question"></div>
+        <input type="number" id="captcha-answer" placeholder="Your Answer" required>
+        <input type="submit" value="Submit Request">
+    </form>
+
+    <div class="table-responsive">
+        <table id="requests-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Blog Link</th>
+                    <th>Date of Submission</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Requests will be populated here -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        // Import Firebase SDKs
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js';
+        import { getFirestore, collection, addDoc, getDocs } from 'https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js';
+
+        // Initialize Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyAYfSOYiMe8y4BF2Tj7e1kKgBMi6tzuiQ0",
+            authDomain: "time-and-thought.firebaseapp.com",
+            projectId: "time-and-thought",
+            storageBucket: "time-and-thought.appspot.com",
+            messagingSenderId: "302383115904",
+            appId: "1:302383115904:web:a9c880021a3b102ccdc065"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // Generate a random math CAPTCHA question
+        function generateCaptcha() {
+            const num1 = Math.floor(Math.random() * 10) + 1;
+            const num2 = Math.floor(Math.random() * 10) + 1;
+            const question = `What is ${num1} + ${num2}?`;
+            const answer = num1 + num2;
+            document.getElementById('captcha-question').textContent = question;
+            return answer;
+        }
+
+        // Store the correct answer in a variable
+        let correctAnswer = generateCaptcha();
+
+        // Form submission handling
+        document.getElementById('request-form').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const name = document.getElementById('user-name').value;
+            const link = document.getElementById('blog-link').value;
+            const date = new Date().toLocaleString();
+            const captchaAnswer = Number(document.getElementById('captcha-answer').value);
+
+            // Validate CAPTCHA
+            if (captchaAnswer !== correctAnswer) {
+                alert('CAPTCHA answer is incorrect. Please try again.');
+                correctAnswer = generateCaptcha(); // Regenerate CAPTCHA
+                document.getElementById('captcha-answer').value = ''; // Clear the input
+                return;
+            }
+
+            try {
+                await addDoc(collection(db, 'blogRequests'), {
+                    name: name,
+                    link: link,
+                    date: date,
+                    status: 'Pending'
+                });
+                alert('Request submitted successfully!');
+                document.getElementById('request-form').reset();
+                correctAnswer = generateCaptcha(); // Regenerate CAPTCHA after successful submission
+                loadRequests();
+            } catch (error) {
+                console.error('Error submitting request:', error);
+                alert('Error submitting request. Please try again.');
+            }
+        });
+
+        // Load requests from Firestore
+        async function loadRequests() {
+            const tableBody = document.querySelector('#requests-table tbody');
+            tableBody.innerHTML = ''; // Clear existing table rows
+
+            try {
+                const snapshot = await getDocs(collection(db, 'blogRequests'));
+                snapshot.forEach(doc => {
+                    const data = doc.data();
+                    const row = document.createElement('tr');
+                    const statusClass = `status-${data.status.toLowerCase()}`;
+                    row.innerHTML = `
+                        <td>${data.name}</td>
+                        <td><a href="${data.link}" target="_blank">${data.link}</a></td>
+                        <td>${data.date}</td>
+                        <td class="${statusClass}">${data.status}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            } catch (error) {
+                console.error('Error loading requests:', error);
+            }
+        }
+
+        // Load requests on page load
+        loadRequests();
+    </script>
+
+</body>
+</html>
