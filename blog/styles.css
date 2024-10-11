@@ -168,7 +168,7 @@ body {
   margin: 20px 0;
   width: 23%; /* Adjust width to fit 4 cards in a row */
   box-shadow: 0 4px 8px rgba(199, 199, 199, 0.342);
-  border-radius: 8px; /* Rounded corners */
+  border-radius: 12px; /* Rounded corners */
   transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out, background-color 0.4s ease-in-out;
   display: flex;
   flex-direction: column;
