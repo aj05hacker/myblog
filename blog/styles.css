@@ -161,7 +161,7 @@ body {
 
 /* Blog Card */
 .blog-card {
-  border: solid rgb(31, 173, 255);
+  border: solid rgb(0, 0, 0);
   background: #ffffff; /* Grayscale background for normal state */
   color: rgb(53, 53, 53); /* Light text color */
   padding: 0;
@@ -246,7 +246,7 @@ body {
 /* Blog Button */
 .blog-btn {
   background-color: #b1fff5;
-  border: none;
+  border: black;
   border-radius: 20px; /* Rounded corners */
   padding: 8px 15px; /* Small size */
   color: rgb(2, 2, 2);
