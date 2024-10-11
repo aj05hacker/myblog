@@ -13,30 +13,29 @@
             overflow-x: hidden; /* Prevent horizontal scrolling */
         }
 
-/* Navigation Bar */
-.navbar {
-    position: fixed; /* Fixes the navbar at the top */
-    top: 0;
-    left: 3%;
-    right: 7%;
-    width: 90%;
-    z-index: 1000; /* Ensures the navbar stays above other elements */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #debeff;
-    padding: 10px 20px;
-    border-radius: 30px 10px 10px 30px; /* Only bottom corners are rounded */
-    margin-bottom: 20px;
-    color: #fff;
-    margin-top: 20px;
-}
+        /* Navigation Bar */
+        .navbar {
+            position: fixed; /* Fixes the navbar at the top */
+            top: 0;
+            left: 3%;
+            right: 7%;
+            width: 90%;
+            z-index: 1000; /* Ensures the navbar stays above other elements */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #debeff;
+            padding: 10px 20px;
+            border-radius: 30px 10px 10px 30px; /* Only bottom corners are rounded */
+            margin-bottom: 20px;
+            color: #fff;
+            margin-top: 20px;
+        }
 
-/* Adjust body padding to prevent content from hiding under the fixed navbar */
-body {
-    padding-top: 70px; /* Adjust this value based on navbar height */
-}
-
+        /* Adjust body padding to prevent content from hiding under the fixed navbar */
+        body {
+            padding-top: 70px; /* Adjust this value based on navbar height */
+        }
 
         .navbar a {
             color: white;
@@ -52,14 +51,12 @@ body {
 
         .navbar .logo {
             display: flex;
-            
         }
 
         .navbar img {
             height: 35px;
             margin-right: 10px;
         }
-
 
         .instructions {
             text-align: center;
@@ -169,14 +166,14 @@ body {
     <!-- Navigation Bar with Logo and Heading -->
     <div class="navbar">
         <div class="logo">
-            <img src="./images/logo - abdulhajees.svg" alt="Logo"> <!-- Replace with your logo image -->
-            
+            <img src="./logo-ajees.svg" alt="Logo">
         </div>
         <div>
             <a href="index.html">Home</a>
             <a href="contact.html">Contact</a>
         </div>
     </div>
+
     <h1>Submit Blog Update Request</h1>
 
     <div class="instructions">
@@ -190,6 +187,10 @@ body {
         <input type="number" id="captcha-answer" placeholder="Your Answer" required>
         <input type="submit" value="Submit Request">
     </form>
+
+    <div id="warning-message" style="display: none; color: red;">
+        You have submitted too many requests. Please contact the admin at admin@abdulhajees.in.
+    </div>
 
     <div class="table-responsive">
         <table id="requests-table">
@@ -209,11 +210,9 @@ body {
 
     <!-- Firebase SDK -->
     <script type="module">
-        // Import Firebase SDKs
         import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js';
-        import { getFirestore, collection, addDoc, getDocs } from 'https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js';
+        import { getFirestore, collection, addDoc, getDocs, query, where, Timestamp, deleteDoc } from 'https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js';
 
-        // Initialize Firebase
         const firebaseConfig = {
             apiKey: "AIzaSyAYfSOYiMe8y4BF2Tj7e1kKgBMi6tzuiQ0",
             authDomain: "time-and-thought.firebaseapp.com",
@@ -226,32 +225,53 @@ body {
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
 
-        // Generate a random math CAPTCHA question
+        let userIP = '';
+
+        // Fetch the user's IP address
+        async function fetchIP() {
+            try {
+                const response = await fetch('https://api.ipify.org?format=json');
+                const data = await response.json();
+                userIP = data.ip;
+                console.log('User IP:', userIP);
+            } catch (error) {
+                console.error('Error fetching IP:', error);
+            }
+        }
+
+        // Fetch IP on page load
+        fetchIP();
+
+        // Generate CAPTCHA question
         function generateCaptcha() {
             const num1 = Math.floor(Math.random() * 10) + 1;
             const num2 = Math.floor(Math.random() * 10) + 1;
             const question = `What is ${num1} + ${num2}?`;
-            const answer = num1 + num2;
             document.getElementById('captcha-question').textContent = question;
-            return answer;
+            return num1 + num2;
         }
 
-        // Store the correct answer in a variable
-        let correctAnswer = generateCaptcha();
+        let captchaAnswer = generateCaptcha();
 
-        // Form submission handling
         document.getElementById('request-form').addEventListener('submit', async (event) => {
             event.preventDefault();
             const name = document.getElementById('user-name').value;
             const link = document.getElementById('blog-link').value;
-            const date = new Date().toLocaleString();
-            const captchaAnswer = Number(document.getElementById('captcha-answer').value);
+            const userAnswer = document.getElementById('captcha-answer').value;
 
-            // Validate CAPTCHA
-            if (captchaAnswer !== correctAnswer) {
-                alert('CAPTCHA answer is incorrect. Please try again.');
-                correctAnswer = generateCaptcha(); // Regenerate CAPTCHA
-                document.getElementById('captcha-answer').value = ''; // Clear the input
+            // CAPTCHA validation
+            if (parseInt(userAnswer) !== captchaAnswer) {
+                alert('Incorrect CAPTCHA answer!');
+                captchaAnswer = generateCaptcha(); // Generate new CAPTCHA
+                return;
+            }
+
+            // Check if the user has submitted too many requests
+            const oneHourAgo = Timestamp.fromDate(new Date(Date.now() - 3600000));
+            const q = query(collection(db, 'blogRequests'), where('ip', '==', userIP), where('timestamp', '>=', oneHourAgo));
+            const querySnapshot = await getDocs(q);
+            if (querySnapshot.size >= 5) {
+                document.getElementById('warning-message').style.display = 'block';
                 return;
             }
 
@@ -259,46 +279,75 @@ body {
                 await addDoc(collection(db, 'blogRequests'), {
                     name: name,
                     link: link,
-                    date: date,
-                    status: 'Pending'
+                    timestamp: Timestamp.now(),
+                    status: 'Pending',
+                    ip: userIP // Store user IP for request tracking
                 });
+
                 alert('Request submitted successfully!');
                 document.getElementById('request-form').reset();
-                correctAnswer = generateCaptcha(); // Regenerate CAPTCHA after successful submission
-                loadRequests();
+                captchaAnswer = generateCaptcha(); // Generate new CAPTCHA after submission
+                loadRequests(); // Reload requests after adding a new one
             } catch (error) {
-                console.error('Error submitting request:', error);
-                alert('Error submitting request. Please try again.');
+                console.error('Error adding document: ', error);
             }
         });
 
-        // Load requests from Firestore
         async function loadRequests() {
-            const tableBody = document.querySelector('#requests-table tbody');
-            tableBody.innerHTML = ''; // Clear existing table rows
+            const requestsTableBody = document.querySelector('#requests-table tbody');
+            requestsTableBody.innerHTML = ''; // Clear previous entries
 
-            try {
-                const snapshot = await getDocs(collection(db, 'blogRequests'));
-                snapshot.forEach(doc => {
-                    const data = doc.data();
-                    const row = document.createElement('tr');
-                    const statusClass = `status-${data.status.toLowerCase()}`;
-                    row.innerHTML = `
-                        <td>${data.name}</td>
-                        <td><a href="${data.link}" target="_blank">${data.link}</a></td>
-                        <td>${data.date}</td>
-                        <td class="${statusClass}">${data.status}</td>
-                    `;
-                    tableBody.appendChild(row);
-                });
-            } catch (error) {
-                console.error('Error loading requests:', error);
-            }
+            const snapshot = await getDocs(collection(db, 'blogRequests'));
+            snapshot.forEach(doc => {
+                const data = doc.data();
+                const row = document.createElement('tr');
+
+                const nameCell = document.createElement('td');
+                nameCell.textContent = data.name;
+                row.appendChild(nameCell);
+
+                const linkCell = document.createElement('td');
+                linkCell.innerHTML = `<a href="${data.link}" target="_blank">${data.link}</a>`;
+                row.appendChild(linkCell);
+
+                const dateCell = document.createElement('td');
+                if (data.timestamp) {
+                    dateCell.textContent = data.timestamp.toDate().toLocaleString(); // Ensure toDate() is called on a valid timestamp
+                } else {
+                    dateCell.textContent = 'N/A'; // Handle cases where timestamp is undefined
+                }
+                row.appendChild(dateCell);
+
+                const statusCell = document.createElement('td');
+                statusCell.textContent = data.status || 'N/A'; // Handle cases where status is undefined
+                statusCell.className = `status-${data.status?.toLowerCase() || 'pending'}`; // Add status class for styling
+                row.appendChild(statusCell);
+
+                requestsTableBody.appendChild(row);
+            });
         }
 
-        // Load requests on page load
-        loadRequests();
-    </script>
+        async function deleteOldRejectedRequests() {
+            const threeDaysAgo = Timestamp.fromDate(new Date(Date.now() - 3 * 24 * 60 * 60 * 1000));
+            const q = query(collection(db, 'blogRequests'), where('status', '==', 'Rejected'));
+            const snapshot = await getDocs(q);
 
+            snapshot.forEach(async (doc) => {
+                const data = doc.data();
+                if (data.timestamp && data.timestamp.toDate() < threeDaysAgo.toDate()) {
+                    await deleteDoc(doc.ref); // Remove the document from Firestore
+                }
+            });
+        }
+
+        // Load requests and handle deletion of old rejected requests
+        async function initializePage() {
+            await loadRequests();
+            await deleteOldRejectedRequests(); // Clean up old rejected requests
+        }
+
+        // Initialize the page on load
+        initializePage();
+    </script>
 </body>
 </html>
