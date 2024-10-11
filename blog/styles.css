@@ -246,7 +246,7 @@ body {
 /* Blog Button */
 .blog-btn {
   background-color: #b1fff5;
-  border: black;
+  border: black solid;
   border-radius: 20px; /* Rounded corners */
   padding: 8px 15px; /* Small size */
   color: rgb(2, 2, 2);
