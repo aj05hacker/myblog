@@ -14,6 +14,7 @@ body {
 /* Navbar */
 .navbar {
   position: fixed;
+  color: #76ffc6;
   top: 20px; /* Adjust the distance from the top of the screen */
   left: 50%;
   transform: translateX(-50%); /* Center the navbar horizontally */
@@ -65,7 +66,7 @@ body {
 }
 
 .menu-bar a {
-  color: white;
+  color: rgb(50, 224, 255);
   margin-left: 10px;
   text-decoration: none;
   font-size: 18px;
