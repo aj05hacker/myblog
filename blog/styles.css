@@ -161,8 +161,8 @@ body {
 
 /* Blog Card */
 .blog-card {
-  background: #3a3a3a; /* Grayscale background for normal state */
-  color: white; /* Light text color */
+  background: #ffffff; /* Grayscale background for normal state */
+  color: rgb(53, 53, 53); /* Light text color */
   padding: 0;
   margin: 20px 0;
   width: 23%; /* Adjust width to fit 4 cards in a row */
