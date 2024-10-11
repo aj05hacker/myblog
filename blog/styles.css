@@ -161,6 +161,7 @@ body {
 
 /* Blog Card */
 .blog-card {
+  border: solid rgb(31, 173, 255);
   background: #ffffff; /* Grayscale background for normal state */
   color: rgb(53, 53, 53); /* Light text color */
   padding: 0;
@@ -188,7 +189,7 @@ body {
   padding: 15px;
   font-size: 18px;
   font-weight: bold;
-  color: rgb(255, 255, 255); /* Ensure the title text stands out */
+  color: rgb(44, 44, 44); /* Ensure the title text stands out */
   text-align: left;
   background-color: transparent; /* Set the background to transparent */
   text-align: left
