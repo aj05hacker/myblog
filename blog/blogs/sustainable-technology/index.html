@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainable Technology: Innovations Saving Our Planet</title>
+    <meta name="description" content="Discover how innovations in sustainable technology are paving the way to a greener future with renewable energy, energy-efficient buildings, clean transportation, and waste reduction.">
+    <meta name="keywords" content="sustainable technology, renewable energy, clean transportation, energy-efficient buildings, waste reduction, green technology, abdulhajees">
+    <meta name="author" content="Abdul Hajees">
+    <link rel="stylesheet" href="https://library.css.abdulhajees.in/compressed.css">
+    <style>
+        body {
+            background-color: #e1e1e1;
+            color: #333;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Floating navigation bar */
+        nav {
+            position:absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.397);
+            padding: 10px 20px;
+            border-radius: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            width: 90%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Navigation logo */
+        .nav-logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        /* Navigation links */
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            padding-left: 4%;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            gap: 10%;
+        }
+
+        .nav-links a:hover {
+            color: #ff9800;
+        }
+
+        /* Hide menu for small screens */
+        .nav-menu {
+            display: none;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Dropdown menu */
+        .dropdown-links {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 70px; /* Adjust based on nav height */
+            right: 20px;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 10px;
+            border-radius: 10px;
+            width: 200px;
+            z-index: 1000;
+        }
+
+        .dropdown-links a {
+            color: white;
+            margin: 5px 0;
+            text-decoration: none;
+            padding: 8px;
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-links a:hover {
+            background-color: #ff9800;
+        }
+
+        /* Header with background image */
+        header {
+            background-image: url('blogs/bg.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 30px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: inline-block;
+            padding: 20px;
+            margin-top: 7%;
+            
+        }
+
+        header h4 {
+            
+            margin: 0;
+            background-color: rgba(0, 0, 0, 0.0.6);
+            display: inline-block;
+            padding: 20px;
+            font-size: small;
+            color: rgb(255, 255, 255);
+        }
+
+        .author{
+            margin-left:4.5%;
+            background-color: #00000078;
+        }
+
+        .header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        /* Blog content styling */
+        .content {
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .content h2 {
+            color: #04280d;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            
+        }
+
+        .content p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .content img {
+            max-width: 100%;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+
+        /* Footer styling */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 30px;
+        }
+
+        footer>p{
+            text-align: center;
+        }
+
+        /* Go to Top Button */
+        .go-to-top {
+            position: fixed;
+            bottom: 80px;
+            right: 30px;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            border: none;
+            border-radius: 300px;
+            padding: 15px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: none; /* Hidden by default */
+            font-size:xx-large;
+            z-index: 1000;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .nav-menu {
+                display: block;
+            }
+
+            header h1 {
+                margin-top: 30%;
+                font-size: 2.5rem;
+                font-size:x-large;
+            }
+
+            .author{
+                margin-left:0;
+                margin-top: 0%;
+            }
+
+            nav {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Navigation Bar -->
+    <nav>
+        <div class="nav-logo">
+            <img src="./Resources/logo.svg" alt="Logo">
+        </div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="nav-menu" onclick="toggleMenu()">&#9776;</div>
+    </nav>
+
+    <!-- Dropdown links for mobile -->
+    <div id="dropdown" class="dropdown-links">
+        <a href="https://blogs.abdulhajees.in">Home</a>
+        <a href="https://abdulhajees.in">About</a>
+        <a href="https://abdulhajees.in">Contact</a>
+    </div>
+
+    <!-- Header with overlay and background image -->
+    <header id="home">
+        <div class="header-overlay"></div>
+        <h1>Sustainable Technology: Innovations Saving Our Planet</h1>
+        <br><br><br>
+        <div style="text-align: left;">
+            <h4 class="author"><strong>Author:</strong> Abdul Hajees | <strong>Date:</strong> October 15, 2024</h4>
+        </div>
+    </header>
+
+    <!-- Blog content -->
+    <div class="content">
+
+        <h2>Introduction</h2>
+        <p>In today's world, the importance of sustainability cannot be overstated. With climate change and environmental degradation becoming more pressing, technological innovations have emerged as key solutions. Sustainable technology, also known as "cleantech," focuses on minimizing environmental impact while promoting long-term ecological balance. From renewable energy to eco-friendly materials, these innovations are shaping a greener future.</p>
+
+        <h2>Renewable Energy Sources: The Power of Nature</h2>
+        <img src="https://images.axios.com/LSlRYBa5apjQoW8bHh4g6gNDwDY=/0x0:1920x1080/1920x1080/2019/09/20/1568988606501.jpg" alt="Renewable Energy">
+        <p>Renewable energy is at the forefront of sustainable technology. Innovations in solar, wind, and hydropower have made it easier for individuals and businesses to shift away from fossil fuels. Solar panels have become more efficient and affordable, allowing homeowners to generate their own clean electricity. Wind turbines are now more efficient and can generate power even at low wind speeds.</p>
+        <p>Countries like Denmark and Germany are leading the way with ambitious plans to become 100% renewable in the coming decades. As these technologies become more accessible, the world edges closer to a future where clean energy is the norm, not the exception.</p>
+
+        <h2>Energy-Efficient Buildings: Designing for a Greener Tomorrow</h2>
+        <img src="https://images.theconversation.com/files/59454/original/n4dfxdj2-1411051429.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1356&h=668&fit=crop" alt="Energy Efficient Buildings">
+        <p>The way buildings are designed and constructed has a significant impact on the environment. Energy-efficient buildings use less energy for heating, cooling, and lighting, which reduces their carbon footprint. Innovations such as smart thermostats, energy-efficient windows, and solar-integrated roofing materials are transforming homes and offices into eco-friendly spaces.</p>
+        <p>The concept of "green architecture" is gaining traction. Green buildings use sustainable materials, optimize energy consumption, and often integrate renewable energy sources. The shift towards energy-efficient buildings is a crucial step towards a sustainable future.</p>
+
+        <h2>Waste Reduction and Circular Economy</h2>
+        <img src="https://i1.wp.com/www.bioenergyconsult.com/wp-content/uploads/2020/12/reducing-waste.jpg?fit=2500%2C1667&ssl=1" alt="Waste Reduction">
+        <p>One of the major challenges the planet faces is the overwhelming amount of waste produced by modern societies. Sustainable technology is helping tackle this issue through innovations in waste reduction and recycling. The concept of a "circular economy" promotes reusing materials rather than discarding them, extending product life cycles and reducing raw material extraction.</p>
+        <p>Companies are         implementing innovative waste management solutions, such as using biodegradable materials and developing recycling technologies. Initiatives like zero-waste stores and composting programs are gaining popularity, promoting sustainable consumption patterns that benefit both consumers and the environment.</p>
+
+        <h2>Clean Transportation: The Future of Mobility</h2>
+        <img src="https://blogs.edf.org/energyexchange/wp-content/blogs.dir/38/files/2021/05/NJ.ACT_.blog2_.jpg" alt="Clean Transportation">
+        <p>Transportation is a significant contributor to greenhouse gas emissions. Sustainable technology is revolutionizing this sector with electric vehicles (EVs), public transportation solutions, and alternative fuels. EVs have gained popularity due to advancements in battery technology, which have led to longer ranges and shorter charging times.</p>
+        <p>Additionally, cities are investing in public transportation systems and promoting cycling and walking to reduce reliance on cars. Innovations like bike-sharing programs and electric buses are transforming urban mobility, making it more sustainable and accessible for all.</p>
+
+        <h2>Conclusion</h2>
+        <p>The innovations in sustainable technology are paving the way for a greener future. By embracing renewable energy, energy-efficient buildings, waste reduction, and clean transportation, society can mitigate the effects of climate change and work towards a sustainable future. As these technologies continue to advance, the potential for a more sustainable world is within reach, but it requires collective effort from individuals, businesses, and governments alike.</p>
+
+
+        <spansor style="background-color: #93939357;border-radius: 10px;padding: 2%;margin-top: 15%;">
+        <h3>Sponsored by</h3>
+        <p>This Content Sponsored by Genreviews.Online Genreviews.online is One of the Review Portal Site. Website Link: https://genreviews.online/</p>
+        <br>      
+        <span style="color: blue;">#genreviews.online, #genreviews, #productreviews, #bestreviews, #reviewportal</span>
+</p>
+        </spansor>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Time and Thought. All rights reserved.</p>
+        <p>By <a href="https://abdulhajees.in" style="color: orangered;">Abdul Hajees.</a></p>
+        <a href="#top" class="go-to-top" onclick="scrollToTop()">↑</a>
+    </footer>
+
+    <script>
+        // Function to toggle the dropdown menu on mobile
+        function toggleMenu() {
+            const dropdown = document.getElementById('dropdown');
+            dropdown.style.display = dropdown.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        // Function to scroll to the top of the page
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Show the go-to-top button when scrolling down
+        window.onscroll = function() {
+            const button = document.querySelector('.go-to-top');
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                button.style.display = 'block';
+            } else {
+                button.style.display = 'none';
+            }
+        };
+    </script>
+</body>
+</html>
