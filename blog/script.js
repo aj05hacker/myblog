@@ -41,7 +41,7 @@ function createBlogCard(blog) {
         <div class="blog-title">${blog.title}</div>
         <div class="blog-image" style="background-image: url('${blog.image}');"></div>
         <div class="blog-date">${blog.date}</div> 
-        <div class="blog-category">Author: ${blog.author}</div>
+        <div class="blog-author">Author: ${blog.author}</div>
         <br>
         <div class="blog-category">Category: ${blog.category}</div>
         <div class="blog-content">
