@@ -41,8 +41,7 @@ function createBlogCard(blog) {
         <div class="blog-title">${blog.title}</div>
         <div class="blog-image" style="background-image: url('${blog.image}');"></div>
         <div class="blog-date">${blog.date}</div> 
-        <div class="blog-author">Author: ${blog.author}</div>
-        <br>
+        <div class="blog-author">Author: ${blog.author}</div><br>
         <div class="blog-category">Category: ${blog.category}</div>
         <div class="blog-content">
             <p class="clamp-2-lines">${blog.description}</p>
@@ -54,15 +53,22 @@ function createBlogCard(blog) {
     return blogCard;
 }
 
-// Function to load blogs from Firestore
+// Function to load blogs from Firestore and sort by date
 async function loadBlogs() {
     try {
         const blogsCollection = collection(db, "blogs");
         const blogSnapshot = await getDocs(blogsCollection);
-        const blogs = blogSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        let blogs = blogSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+
+        // Sort blogs by date (assuming date format is mm/dd/yyyy)
+        blogs = blogs.sort((a, b) => {
+            const dateA = new Date(a.date); // Convert string to Date object
+            const dateB = new Date(b.date); // Convert string to Date object
+            return dateB - dateA; // Sort in descending order (newest first)
+        });
 
         blogsContainer.innerHTML = ''; // Clear existing blogs
-        categorysSet.clear(); // Clear existing categorys
+        categorysSet.clear(); // Clear existing categories
 
         blogs.forEach(blog => {
             // Add category to set
@@ -75,12 +81,14 @@ async function loadBlogs() {
             blogsContainer.appendChild(blogCard);
         });
 
-        populateCategoryDropdown();
+        populateCategoryDropdown(); // Populate the category dropdown menu
     } catch (error) {
         console.error("Error loading blogs: ", error);
         blogsContainer.innerHTML = '<p style="color: red; text-align: center;">Error loading blogs. Please try again later.</p>';
     }
 }
+
+
 
 // Function to populate category dropdown
 function populateCategoryDropdown() {
@@ -118,3 +126,9 @@ categorySelect.addEventListener('change', filterBlogs);
 
 // Load blogs on page load
 window.addEventListener('DOMContentLoaded', loadBlogs);
+
+
+
+
+
+
