@@ -25,10 +25,10 @@ const db = getFirestore(app);
 
 // Elements
 const blogsContainer = document.getElementById('blogs-container');
-const authorSelect = document.getElementById('author-select');
+const categorySelect = document.getElementById('category-select');
 
-// Set to store unique authors
-const authorsSet = new Set();
+// Set to store unique categorys
+const categorysSet = new Set();
 
 // Function to create blog card HTML
 function createBlogCard(blog) {
@@ -41,7 +41,9 @@ function createBlogCard(blog) {
         <div class="blog-title">${blog.title}</div>
         <div class="blog-image" style="background-image: url('${blog.image}');"></div>
         <div class="blog-date">${blog.date}</div> 
-        <div class="blog-author">Author: ${blog.author}</div>
+        <div class="blog-category">Author: ${blog.author}</div>
+        <br>
+        <div class="blog-category">Category: ${blog.category}</div>
         <div class="blog-content">
             <p class="clamp-2-lines">${blog.description}</p>
         </div>
@@ -60,12 +62,12 @@ async function loadBlogs() {
         const blogs = blogSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 
         blogsContainer.innerHTML = ''; // Clear existing blogs
-        authorsSet.clear(); // Clear existing authors
+        categorysSet.clear(); // Clear existing categorys
 
         blogs.forEach(blog => {
-            // Add author to set
-            if (blog.author) {
-                authorsSet.add(blog.author);
+            // Add category to set
+            if (blog.category) {
+                categorysSet.add(blog.category);
             }
 
             // Create blog card
@@ -73,37 +75,37 @@ async function loadBlogs() {
             blogsContainer.appendChild(blogCard);
         });
 
-        populateAuthorDropdown();
+        populateCategoryDropdown();
     } catch (error) {
         console.error("Error loading blogs: ", error);
         blogsContainer.innerHTML = '<p style="color: red; text-align: center;">Error loading blogs. Please try again later.</p>';
     }
 }
 
-// Function to populate author dropdown
-function populateAuthorDropdown() {
-    // Clear existing options except "All Authors"
-    authorSelect.innerHTML = '<option value="all">All Authors</option>';
+// Function to populate category dropdown
+function populateCategoryDropdown() {
+    // Clear existing options except "All Categorys"
+    categorySelect.innerHTML = '<option value="all">All Category</option>';
 
-    authorsSet.forEach(author => {
+    categorysSet.forEach(category => {
         const option = document.createElement('option');
-        option.value = author;
-        option.textContent = author;
-        authorSelect.appendChild(option);
+        option.value = category;
+        option.textContent = category;
+        categorySelect.appendChild(option);
     });
 }
 
-// Function to filter blogs by author
+// Function to filter blogs by category
 function filterBlogs() {
-    const selectedAuthor = authorSelect.value;
+    const selectedCategory = categorySelect.value;
 
     const blogCards = document.querySelectorAll('.blog-card');
 
     blogCards.forEach(card => {
-        const authorText = card.querySelector('.blog-author').textContent;
-        const author = authorText.replace('Author: ', '').trim();
+        const categoryText = card.querySelector('.blog-category').textContent;
+        const category = categoryText.replace('Category: ', '').trim();
 
-        if (selectedAuthor === 'all' || author === selectedAuthor) {
+        if (selectedCategory === 'all' || category === selectedCategory) {
             card.style.display = 'flex'; // Ensure flex display for alignment
         } else {
             card.style.display = 'none';
@@ -111,8 +113,8 @@ function filterBlogs() {
     });
 }
 
-// Event listener for author filter
-authorSelect.addEventListener('change', filterBlogs);
+// Event listener for category filter
+categorySelect.addEventListener('change', filterBlogs);
 
 // Load blogs on page load
 window.addEventListener('DOMContentLoaded', loadBlogs);
