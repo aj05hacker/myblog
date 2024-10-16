@@ -207,7 +207,7 @@ body {
 /* Blog Date */
 .blog-date {
   font-size: 14px;
-  color: #005c54; /* Light gray color */
+  color: #929292; /* Light gray color */
   padding: 10px 20px;
   text-align: left;
   font-style: italic;
@@ -223,10 +223,10 @@ body {
   font-style: italic;
 }
 
-/* Blog author */
+/* Blog Category */
 .blog-category {
   font-size: 12px;
-  color: #005c54; /* Light gray color */
+  color: #707070; /* Light gray color */
   padding: 0 20px;
   padding-top: 3px;
   text-align: left;
