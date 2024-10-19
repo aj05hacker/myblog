@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Blog Update Request</title>
+    <title>User Post Update Request</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -174,15 +174,15 @@
         </div>
     </div>
 
-    <h1>Submit Blog Update Request</h1>
+    <h1>Submit Post Update Request</h1>
 
     <div class="instructions">
-        To add your blog to our showcase, please enter your real name and the blog link. The admin will verify the blog and add it to our site as soon as possible.
+        To add your post to our post, please enter your real name and the post link. The admin will verify the post and add it to our site as soon as possible.
     </div>
 
     <form id="request-form">
         <input type="text" id="user-name" placeholder="Your Name" required>
-        <input type="url" id="blog-link" placeholder="Blog Link" required>
+        <input type="url" id="post-link" placeholder="Post Link" required>
         <div class="captcha" id="captcha-question"></div>
         <input type="number" id="captcha-answer" placeholder="Your Answer" required>
         <input type="submit" value="Submit Request">
@@ -197,7 +197,7 @@
             <thead>
                 <tr>
                     <th>Name</th>
-                    <th>Blog Link</th>
+                    <th>post Link</th>
                     <th>Date of Submission</th>
                     <th>Status</th>
                 </tr>
@@ -256,7 +256,7 @@
         document.getElementById('request-form').addEventListener('submit', async (event) => {
             event.preventDefault();
             const name = document.getElementById('user-name').value;
-            const link = document.getElementById('blog-link').value;
+            const link = document.getElementById('post-link').value;
             const userAnswer = document.getElementById('captcha-answer').value;
 
             // CAPTCHA validation
@@ -268,7 +268,7 @@
 
             // Check if the user has submitted too many requests
             const oneHourAgo = Timestamp.fromDate(new Date(Date.now() - 3600000));
-            const q = query(collection(db, 'blogRequests'), where('ip', '==', userIP), where('timestamp', '>=', oneHourAgo));
+            const q = query(collection(db, 'postRequests'), where('ip', '==', userIP), where('timestamp', '>=', oneHourAgo));
             const querySnapshot = await getDocs(q);
             if (querySnapshot.size >= 5) {
                 document.getElementById('warning-message').style.display = 'block';
@@ -276,7 +276,7 @@
             }
 
             try {
-                await addDoc(collection(db, 'blogRequests'), {
+                await addDoc(collection(db, 'postRequests'), {
                     name: name,
                     link: link,
                     timestamp: Timestamp.now(),
@@ -297,7 +297,7 @@
             const requestsTableBody = document.querySelector('#requests-table tbody');
             requestsTableBody.innerHTML = ''; // Clear previous entries
 
-            const snapshot = await getDocs(collection(db, 'blogRequests'));
+            const snapshot = await getDocs(collection(db, 'postRequests'));
             snapshot.forEach(doc => {
                 const data = doc.data();
                 const row = document.createElement('tr');
@@ -329,7 +329,7 @@
 
         async function deleteOldRejectedRequests() {
             const threeDaysAgo = Timestamp.fromDate(new Date(Date.now() - 3 * 24 * 60 * 60 * 1000));
-            const q = query(collection(db, 'blogRequests'), where('status', '==', 'Rejected'));
+            const q = query(collection(db, 'postRequests'), where('status', '==', 'Rejected'));
             const snapshot = await getDocs(q);
 
             snapshot.forEach(async (doc) => {
