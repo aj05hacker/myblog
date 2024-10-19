@@ -134,7 +134,7 @@ body {
   margin-bottom: 20px; /* Add space between the quote and the button */
 }
 
-.read-posts-btn {
+.read-blogs-btn {
   padding: 15px 30px;
   background-color: #76ffc6;
   border: none;
@@ -144,11 +144,11 @@ body {
   border: solid 3px rgb(0, 0, 0);
 }
 
-.read-posts-btn:hover {
+.read-blogs-btn:hover {
   background-color: #ff4500;
 }
 
-.posts-section {
+.blogs-section {
   padding: 50px 0;
   background-color: #000; /* Set background color to black */
 }
@@ -160,8 +160,8 @@ body {
   justify-content: space-between;
 }
 
-/* Post Card */
-.post-card {
+/* Blog Card */
+.blog-card {
   border: solid rgb(0, 0, 0);
   background: #ffffff; /* Grayscale background for normal state */
   color: rgb(53, 53, 53); /* Light text color */
@@ -177,16 +177,16 @@ body {
   position: relative; /* For positioning the button */
 }
 
-/* Post Card Hover Effect */
-.post-card:hover {
+/* Blog Card Hover Effect */
+.blog-card:hover {
   transform: scale(1.08);
   box-shadow: 0 12px 24px rgba(170, 170, 170, 0.3);
   background-color: #fa5e20; /* Brighter grayscale background on hover */
   color: rgb(255, 255, 255);
 }
 
-/* Post Title */
-.post-title {
+/* Blog Title */
+.blog-title {
   padding: 15px;
   font-size: 18px;
   font-weight: bold;
@@ -196,16 +196,16 @@ body {
   text-align: left
 }
 
-/* Post Image */
-.post-image {
+/* Blog Image */
+.blog-image {
   height: 200px;
   background-size: cover;
   background-position: center;
   transition: filter 0.4s ease-in-out; /* Smooth transition for filter */
 }
 
-/* Post Date */
-.post-date {
+/* Blog Date */
+.blog-date {
   font-size: 14px;
   color: #929292; /* Light gray color */
   padding: 10px 20px;
@@ -214,8 +214,8 @@ body {
   background-color: transparent; /* Ensure the background is transparent */
 }
 
-/* Post Author */
-.post-author {
+/* Blog Author */
+.blog-author {
   font-size: 16px;
   color: #005c54; /* Light gray color */
   padding: 0 20px;
@@ -223,8 +223,8 @@ body {
   font-style: italic;
 }
 
-/* Post Category */
-.post-category {
+/* Blog Category */
+.blog-category {
   font-size: 12px;
   color: #707070; /* Light gray color */
   padding: 0 20px;
@@ -233,8 +233,8 @@ body {
   font-style: italic;
 }
 
-/* Post Content */
-.post-content {
+/* Blog Content */
+.blog-content {
   text-align: justify;
   padding-left: 20px;
   padding-right: 20px;
@@ -249,13 +249,13 @@ body {
   margin-bottom: 20px; /* Reduced margin to create space for the button */
 }
 
-.post-card:hover .post-content {
+.blog-card:hover .blog-content {
   background-color: rgba(255, 255, 255, 0.5); /* White background with 50% transparency */
   color: black; /* Change text color for better readability */
 }
 
-/* Post Button */
-.post-btn {
+/* Blog Button */
+.blog-btn {
   background-color: #b1fff5;
   border: black solid;
   border-radius: 20px; /* Rounded corners */
@@ -271,18 +271,18 @@ body {
   align-items: center;
 }
 
-.post-btn a {
+.blog-btn a {
   text-decoration: none;
   color: rgb(0, 0, 0);
 }
 
-.post-btn a:hover {
+.blog-btn a:hover {
   color: #000000;
 }
 
 /* Responsive Design */
 @media (max-width: 992px) {
-  .post-card {
+  .blog-card {
       width: 48%;
   }
 
@@ -292,7 +292,7 @@ body {
 }
 
 @media (max-width: 768px) {
-  .post-card {
+  .blog-card {
       width: 100%;
   }
 
@@ -306,7 +306,7 @@ body {
       margin-bottom: 10px;
   }
 
-  .read-posts-btn {
+  .read-blogs-btn {
       font-size: 16px;
       padding: 10px 20px;
       margin-top: 10px;
@@ -352,7 +352,7 @@ body {
   }
 }
 
-/* Post Card Hover Effect on Image */
-.post-card:hover .post-image {
+/* Blog Card Hover Effect on Image */
+.blog-card:hover .blog-image {
   filter: grayscale(100%); /* Apply grayscale filter on hover */
 }

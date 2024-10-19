@@ -1,4 +1,4 @@
-postpost// script.js
+blogblog// script.js
 
 document.querySelector('.hamburger-menu').addEventListener('click', function () {
     document.querySelector('.navbar').classList.toggle('active');
@@ -31,7 +31,7 @@ const categorySelect = document.getElementById('category-select');
 const categorysSet = new Set();
 
 // Function to create blog card HTML
-function createPostCard(blog) {
+function createBlogCard(blog) {
     const blogCard = document.createElement('div');
     blogCard.className = 'blog-card';
     // Inline styles are handled via CSS classes
@@ -47,14 +47,14 @@ function createPostCard(blog) {
             <p class="clamp-2-lines">${blog.description}</p>
         </div>
         <div class="blog-btn">
-            <a href="${blog.link}" aria-label="Open the Post about ${blog.title}">Open The Post</a>
+            <a href="${blog.link}" aria-label="Open the Blog about ${blog.title}">Open The Blog</a>
         </div>
     `;
     return blogCard;
 }
 
 // Function to load blogs from Firestore and sort by date
-async function loadPosts() {
+async function loadBlogs() {
     try {
         const blogsCollection = collection(db, "blogs");
         const blogSnapshot = await getDocs(blogsCollection);
@@ -77,7 +77,7 @@ async function loadPosts() {
             }
 
             // Create blog card
-            const blogCard = createPostCard(blog);
+            const blogCard = createBlogCard(blog);
             blogsContainer.appendChild(blogCard);
         });
 
@@ -104,7 +104,7 @@ function populateCategoryDropdown() {
 }
 
 // Function to filter blogs by category
-function filterPosts() {
+function filterBlogs() {
     const selectedCategory = categorySelect.value;
 
     const blogCards = document.querySelectorAll('.blog-card');
@@ -122,10 +122,10 @@ function filterPosts() {
 }
 
 // Event listener for category filter
-categorySelect.addEventListener('change', filterPosts);
+categorySelect.addEventListener('change', filterBlogs);
 
 // Load blogs on page load
-window.addEventListener('DOMContentLoaded', loadPosts);
+window.addEventListener('DOMContentLoaded', loadBlogs);
 
 
 
