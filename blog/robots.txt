@@ -1,4 +1,2 @@
-postUser-agent: *
-Disallow:
-
+User-agent: *
 Sitemap: https://blogs.abdulhajees.in/sitemap.xml
