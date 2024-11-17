@@ -9,31 +9,225 @@
         <priority>1.0</priority>
     </url>
 
-    <!-- Blog Post 1 -->
+    <!-- Existing Blog Posts -->
     <url>
         <loc>https://blogs.abdulhajees.in/blogs/beautiful-gardens/index.html</loc>
         <lastmod>2024-08-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
-
-    <!-- Blog Post 2 -->
     <url>
         <loc>https://blogs.abdulhajees.in/blogs/blackhole/index.html</loc>
         <lastmod>2024-08-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
-
-    <!-- Blog Post 3 -->
     <url>
         <loc>https://blogs.abdulhajees.in/blogs/sleep/index.html</loc>
         <lastmod>2024-08-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
+    <url>
+        <loc>https://blogs.abdulhajees.in/blogs/social-media-adiction/index.html</loc>
+        <lastmod>2024-08-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
 
-    <!-- Blog Post 4 -->
+    <!-- New Blog Posts -->
+    <url>
+        <loc>https://blogs.abdulhajees.in/blogs/nutrition-myths/index.html</loc>
+        <lastmod>2024-11-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://blogs.abdulhajees.in/blogs/eco-system/index.html</loc>
+        <lastmod>2024-11-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://blogs.abdulhajees.in/blogs/human-emotions/index.html</loc>
+        <lastmod>2024-11-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://blogs.abdulhajees.in/blogs/overcoming-procrastination/index.html</loc>
+        <lastmod>2024-11-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://blogs.abdulhajees.in/blogs/sustainable-life/index.html</loc>
+        <lastmod>2024-11-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://blogs.abdulhajees.in/blogs/affordable-travel/index.html</loc>
+        <lastmod>2024-11-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://blogs.abdulhajees.in/blogs/evehicle/index.html</loc>
+        <lastmod>2024-11-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://blogs.abdulhajees.in/blogs/human-sense/index.html</loc>
+        <lastmod>2024-11-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://blogs.abdulhajees.in/blogs/passion/index.html</loc>
+        <lastmod>2024-11-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://blogs.abdulhajees.in/blogs/sustainable-technology/index.html</loc>
+        <lastmod>2024-11-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://blogs.abdulhajees.in/blogs/agriculture/index.html</loc>
+        <lastmod>2024-11-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://blogs.abdulhajees.in/blogs/financial-literacy/index.html</loc>
+        <lastmod>2024-11-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://blogs.abdulhajees.in/blogs/lifelong-learning/index.html</loc>
+        <lastmod>2024-11-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://blogs.abdulhajees.in/blogs/psycology-of-money/index.html</loc>
+        <lastmod>2024-11-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://blogs.abdulhajees.in/blogs/time-management/index.html</loc>
+        <lastmod>2024-11-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://blogs.abdulhajees.in/blogs/flight/index.html</loc>
+        <lastmod>2024-11-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://blogs.abdulhajees.in/blogs/mars-mission/index.html</loc>
+        <lastmod>2024-11-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://blogs.abdulhajees.in/blogs/savings/index.html</loc>
+        <lastmod>2024-11-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://blogs.abdulhajees.in/blogs/train/index.html</loc>
+        <lastmod>2024-11-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://blogs.abdulhajees.in/blogs/blackhole/index.html</loc>
+        <lastmod>2024-08-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://blogs.abdulhajees.in/blogs/foods/index.html</loc>
+        <lastmod>2024-11-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://blogs.abdulhajees.in/blogs/mentalhealth-in-workplace/index.html</loc>
+        <lastmod>2024-11-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://blogs.abdulhajees.in/blogs/sleep/index.html</loc>
+        <lastmod>2024-08-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://blogs.abdulhajees.in/blogs/water/index.html</loc>
+        <lastmod>2024-11-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://blogs.abdulhajees.in/blogs/communication/index.html</loc>
+        <lastmod>2024-11-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://blogs.abdulhajees.in/blogs/game/index.html</loc>
+        <lastmod>2024-11-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://blogs.abdulhajees.in/blogs/minimalism/index.html</loc>
+        <lastmod>2024-11-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://blogs.abdulhajees.in/blogs/smarthome/index.html</loc>
+        <lastmod>2024-11-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://blogs.abdulhajees.in/blogs/zerowaste/index.html</loc>
+        <lastmod>2024-11-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://blogs.abdulhajees.in/blogs/darkweb/index.html</loc>
+        <lastmod>2024-11-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://blogs.abdulhajees.in/blogs/geoengineering/index.html</loc>
+        <lastmod>2024-11-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://blogs.abdulhajees.in/blogs/negotiation/index.html</loc>
+        <lastmod>2024-11-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
     <url>
         <loc>https://blogs.abdulhajees.in/blogs/social-media-adiction/index.html</loc>
         <lastmod>2024-08-20</lastmod>
@@ -47,13 +241,10 @@
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
-
-    <!-- Coming Soon Page -->
     <url>
-        <loc>https://blogs.abdulhajees.in/coming-soon/index.html</loc>
-        <lastmod>2024-08-20</lastmod>
+        <loc>https://me.abdulhajees.in/</loc>
         <changefreq>weekly</changefreq>
-        <priority>0.5</priority>
+        <priority>0.8</priority>
     </url>
 
 </urlset>
